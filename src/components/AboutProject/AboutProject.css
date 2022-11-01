@@ -1,0 +1,42 @@
+.AboutProject {
+
+}
+
+.AboutProject__title {
+    width: 600px;
+    margin: 110px auto 23px 70px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+
+
+}
+
+.AboutProject__textArea {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    border-top: 1px solid #DADADA;
+    margin: 0 70px 110px;
+    padding-top: 70px;
+    gap: 26px 40px;
+}
+
+.AboutProject__textTitle {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.AboutProject__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}

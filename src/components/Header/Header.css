@@ -1,0 +1,33 @@
+.Header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header__logo {
+    width: 38px;
+    height: 38px;
+    margin: 18px auto 18px 70px;
+}
+
+.Header__regLink {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin: 29px 30px 29px auto;
+}
+
+.Header__btnLog {
+    width: 78px;
+    height: 32px;
+    background: #3DDC84;
+    margin: 21px 70px 21px 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+
+}

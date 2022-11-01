@@ -1,0 +1,49 @@
+.Promo {
+    width: 100%;
+    background-color: #073042;
+}
+
+.Promo__info {
+    display: flex;
+    flex-direction: row;
+}
+
+.Promo__img {
+    width: 310px;
+    height: 304px;
+    margin: 75px 70px auto auto;
+}
+
+.Promo__title {
+    width: 640px;
+    margin: 75px auto 36px 70px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    color: #FFFFFF;
+}
+
+.Promo__notice {
+    width: 310px;
+    margin: 0 auto 146px 70px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.Promo__btn {
+    width: 129px;
+    height: 36px;
+    margin: 0 auto 75px 70px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
