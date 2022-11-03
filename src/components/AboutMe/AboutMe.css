@@ -1,0 +1,68 @@
+.AboutMe {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.AboutMe__title {
+    padding-top: 110px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #DADADA;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.AboutMe__grid {
+    width: 100%;
+    margin: 66px auto 0;
+    display: grid;
+    grid-template-columns: 600px 500px;
+    gap: 0 40px;
+
+}
+
+.AboutMe__name{
+    font-weight: 400;
+    margin: 0 auto 18px 0;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.AboutMe__prof {
+    margin: 0 auto 26px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+}
+
+.AboutMe__text {
+    margin: 0;
+    padding-bottom: 99px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+}
+
+.AboutMe__link {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.AboutMe__foto {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    margin: 0 0 auto auto;
+}

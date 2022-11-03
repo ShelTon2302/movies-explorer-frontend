@@ -1,10 +1,11 @@
 .AboutProject {
-
+    width: 1140px;
+    margin: 0 auto;
 }
 
 .AboutProject__title {
     width: 600px;
-    margin: 110px auto 23px 70px;
+    margin: 110px auto 23px 0;
     font-weight: 400;
     font-size: 22px;
     line-height: 27px;
@@ -19,7 +20,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
     border-top: 1px solid #DADADA;
-    margin: 0 70px 110px;
+    margin: 0 0 110px;
     padding-top: 70px;
     gap: 26px 40px;
 }
@@ -39,4 +40,46 @@
     font-size: 14px;
     line-height: 20px;
     color: #FFFFFF;
+}
+
+.AboutProject__timeBar {
+    display: grid;
+    width: 1140px;
+    grid-template-columns: 228px 912px;
+    grid-template-rows: repeat(2, 36px);
+    gap: 5px 0px;
+    margin: 0 0 100px;
+}
+
+.AboutProject__smallBar {
+    margin: 0;
+    padding-top: 9px;    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #8B8B8B;
+}
+
+.AboutProject__smallBar_background_green {
+    background-color: #3DDC84;
+    color: #000;
+    font-weight: 400;
+}
+
+.AboutProject__bigBar {
+    margin: 0;
+    padding-top: 9px;    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #8B8B8B;
+}
+
+.AboutProject__bigBar_background_grey {
+    background-color: #303030;
+    color: #FFF;
+    font-weight: 400;
+    border-left: 1px solid #303030;
 }

@@ -1,0 +1,37 @@
+.Portfolio {
+    width: 1140px;
+    margin: 101px auto 125px;
+}
+
+.Portfolio__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #8B8B8B;
+    mix-blend-mode: normal;
+
+}
+
+.Portfolio__table {
+    width: 100%;
+    margin: 50px 0 0;
+    display: grid;
+    grid-template-columns: 880px 29px;
+    grid-template-rows: repeat(3, 50px);
+    gap: 40px 231px;
+}
+
+.Portfolio__item {
+    margin: 0;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.Portfolio__img {
+    margin: 0 auto;
+    padding-top: 16px;
+}
