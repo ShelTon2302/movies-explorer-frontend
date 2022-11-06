@@ -1,0 +1,95 @@
+.SearchForm {
+    width: 1140px;
+    margin: 70px auto 0;
+}
+
+.SearchForm__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #424242;
+}
+
+.SearchForm__icon {
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    border: 1px solid #424242;
+    border-radius: 50%;
+}
+
+.SearchForm__input {
+    width: 1000px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #8B8B8B;
+    background-color: #202020;
+    border: none;
+}
+
+.SearchForm__button {
+    width: 58,65px;
+    height: 34px;
+    background: #4285F4;
+    border-radius: 48px;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.SearchForm__checkbox {
+    position: absolute;
+    width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
+    height: 1px;
+    overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. Мы его ещё изучим, оно скрывает элементы, выходящие за границы родителя */
+    clip: rect(0 0 0 0);
+}
+
+.SearchForm__newCheckbox {
+    margin: 29px 0 48px 483px;
+    display: inline-block; /* элемент span теперь сможет принимать определённую ширину и высоту */
+    vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
+    width: 36px;
+    height: 20px;
+    background: url(../../images/search_tumbler.svg);
+    background-repeat: no-repeat;
+    background-position: -45% 25%;
+    background-color: #EE3465;
+    border: 1px solid #EE3465;
+    border-radius: 20px;
+    transition: background-color 1s ease-out;
+}
+
+.SearchForm__checkbox:checked + .SearchForm__newCheckbox {
+    border: 1px solid #3DDC84;
+    background-position: 160% 25%;
+    background-color: #3DDC84;
+    transition: background-color 1s ease-out;
+}
+
+.SearchForm__checkbox:disabled + .SearchForm__newCheckbox {
+    border: 1px solid #8B8B8B;
+    background-position: 160% 25%;
+    background-color: #8B8B8B;
+    opacity: .4;
+    transition: opacity 1s ease-out;
+}
+
+.SearchForm__checkbox:focus + .SearchForm__newCheckbox {
+}
+
+.SearchForm__newCheckboxText {
+    margin: 30px auto 49px 12px;
+    display: inline-block; /* элемент span теперь сможет принимать определённую ширину и высоту */
+    vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
+    width: 126px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
