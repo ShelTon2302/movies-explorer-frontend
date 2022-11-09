@@ -5,10 +5,9 @@ import img from '../../images/promo_img.svg';
 function Promo() {
     return (
         <div className="Promo">
-            <Header>
-                <p className="Header__regLink">Регистрация</p>
-                <button type="button" className="Header__btnLog">Войти</button>
-            </Header>
+            <Header
+                isAbout='true'   
+            />
             <div className="Promo__info">
                 <div className="Promo__text">
                     <h1 className="Promo__title">Учебный проект студента факультета Веб&#8209;разработки.</h1>

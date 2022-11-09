@@ -3,3 +3,16 @@
     width: 1140px;
     height: 1178px;
 }
+
+.MoviesCardList__yetBtn {
+    width: 320px;
+    height: 36px;
+    margin: 50px 480px 80px;
+    background: none;
+    border: 1px solid #424242;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+}
