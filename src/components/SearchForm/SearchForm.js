@@ -3,8 +3,8 @@ import searchIcon from '../../images/search_icon.svg';
 
 function SearchForm() {
     return (
-        <div className="SearchForm">
-            <div className="SearchForm__group">
+        <section className="SearchForm">
+            <form className="SearchForm__form">
                 <img className="SearchForm__icon" src={searchIcon} alt="find"></img>
                 <input 
                     type="text" 
@@ -13,13 +13,13 @@ function SearchForm() {
                     required 
                 />
                 <button type="submit" className="SearchForm__button">Найти</button>
-            </div>
+            </form>
             <label className="SearchForm__label">
                 <input type="checkbox" className="SearchForm__checkbox"></input>
                 <span className="SearchForm__newCheckbox"></span>
                 <span className="SearchForm__newCheckboxText">Короткометражки</span>
             </label>
-        </div>
+        </section>
     );
 }
 

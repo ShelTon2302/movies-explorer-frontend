@@ -1,4 +1,10 @@
 .Techs {
+    width: 100%;
+    margin: 0 auto;
+    background: #272727;
+}
+
+.Techs__content {
     width: 1140px;
     margin: 0 auto;
 }

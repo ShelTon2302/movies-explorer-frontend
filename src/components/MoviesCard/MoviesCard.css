@@ -1,5 +1,6 @@
 .MoviesCard {
     width: 100%;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -12,7 +13,7 @@
 }
 
 .MoviesCard__title {
-    margin: 22px auto 13px 22px;
+    margin: 21px auto 13px 22px;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
@@ -21,7 +22,7 @@
 }
 
 .MoviesCard__duration {
-    margin: 0 auto 30px 22px;
+    margin: 0 auto 26px 22px;
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;

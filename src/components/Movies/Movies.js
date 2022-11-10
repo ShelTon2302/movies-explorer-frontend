@@ -5,6 +5,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import './Movies.css'
 import Footer from '../Footer/Footer';
+import cards from '../../const/cards';
 
 function Movies() {
     const loadingMovies = false
@@ -12,7 +13,14 @@ function Movies() {
         <div className="Movies">
             <Header />
             <SearchForm />
-            {loadingMovies ? <Preloader /> : <MoviesCardList />}
+            {loadingMovies 
+                ? 
+                    <Preloader /> 
+                : 
+                    <MoviesCardList 
+                        cards={cards}
+                    />
+            }
             <Footer />
         </div>
     );

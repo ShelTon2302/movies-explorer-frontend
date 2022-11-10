@@ -1,7 +1,12 @@
 .Header {
     width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
+}
+
+.Header_backgroud_blue {
+    background-color: #073042;
 }
 
 .Header__logo {
@@ -21,17 +26,20 @@
 }
 
 .Header__logLink {
-    width: 78px;
-    height: 26px;
+    width: 74px;
+    height: 22px;
     background: #3DDC84;
-    margin: 21px 70px 21px 0;
-    padding-top: 6px;
+    margin: 21px 70px 2px 0;
+    padding-top: 7px;
+    padding-bottom: 1px;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
     color: #000000;
     text-decoration: none;
+    border: 1px solid #3DDC84;
+    border-radius: 3px;
 }
 
 .Header__menu {
@@ -49,6 +57,10 @@
     text-decoration: none;
 }
 
+.Header__menuLink:first-child {
+    padding-left: 47px;
+}
+
 .Header__menuLink_active {
     text-decoration: underline;
 }
@@ -62,7 +74,7 @@
 }
 
 .Header__profileText {
-    margin: 7px 0;
+    margin: 6px 0 8px;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;

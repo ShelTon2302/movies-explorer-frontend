@@ -1,7 +1,7 @@
 import './App.css';
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Main from '../Main/Main';
+import MainPage from '../MainPage/MainPage';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import AuthForm from '../AuthForm/AuthForm';
@@ -10,10 +10,10 @@ import NotFound from '../NotFound/NotFound';
 
 function App() {
   return (
-    <div className="App">
+    <section className="App">
       <Switch>
         <Route exact path="/">
-          <Main />
+          <MainPage />
         </Route>
         <Route path="/signin">
           <AuthForm 
@@ -54,7 +54,7 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
-    </div>
+    </section>
   );
 }
 

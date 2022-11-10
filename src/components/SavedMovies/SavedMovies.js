@@ -5,9 +5,10 @@ import Preloader from '../Preloader/Preloader';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../Footer/Footer';
+import savedcards from '../../const/savedcards';
 
 function SavedMovies() {
-    const loadingMovies = true
+    const loadingMovies = false
 
     return (
         <div className="SavedMovies">
@@ -17,7 +18,10 @@ function SavedMovies() {
                 ? 
                     <Preloader /> 
                 : 
-                    <MoviesCardList />
+                    <MoviesCardList 
+                        cards={savedcards}
+                        isSaved={true}
+                    />
             }
             <Footer />
         </div>

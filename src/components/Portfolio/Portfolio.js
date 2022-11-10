@@ -3,7 +3,7 @@ import imgLink from '../../images/portfolio_link.svg';
 
 function Portfolio() {
     return (
-        <div className="Portfolio">
+        <section className="Portfolio">
             <h2 className="Portfolio__title">Портфолио</h2>
             <div className="Portfolio__table">
                 <h3 className="Portfolio__item">Статичный сайт</h3>
@@ -13,7 +13,7 @@ function Portfolio() {
                 <h3 className="Portfolio__item">Одностраничное приложение</h3>
                 <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
             </div>
-        </div>
+        </section>
     );
 };
 

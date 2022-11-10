@@ -1,13 +1,13 @@
 .MoviesCardList {
-    margin: 70px auto 10px;
+    margin: 70px auto 0;
     width: 1140px;
-    height: 1178px;
 }
 
 .MoviesCardList__yetBtn {
+    display: block;
     width: 320px;
     height: 36px;
-    margin: 50px 480px 80px;
+    margin: 60px auto 80px;
     background: none;
     border: 1px solid #424242;
     font-weight: 500;
@@ -15,4 +15,9 @@
     line-height: 15px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.MoviesCardList__yetBtn_visibility_hidden {
+    visibility: hidden;
+    margin-bottom: 54px;
 }

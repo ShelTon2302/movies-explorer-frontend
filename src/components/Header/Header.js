@@ -5,13 +5,13 @@ import logo from '../../images/header_logo.svg'
 
 function Header(props) {
     return (
-      <header className="Header">
+      <header className={`Header${props.isAbout ? ' Header_backgroud_blue' : ''}`}>
         <img className="Header__logo" src={logo} alt="logo"></img>
         {props.isAbout 
           ? 
             <>
               <Link className="Header__regLink" to="/signup">Регистрация</Link>
-              <Link className="Header__logLink" to="/signin">Войти</Link>
+              <Link className="Header__logLink" to="/signin">Войти </Link>
             </>
           :
             <>
