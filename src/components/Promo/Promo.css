@@ -7,7 +7,7 @@
     width: 1140px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 
 .Promo__img {
@@ -48,4 +48,40 @@
     line-height: 16px;
     text-align: center;
     color: #FFFFFF;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1180px){
+    .Promo {
+        padding-bottom: 76px;
+    }
+
+    .Promo__info {
+        width: 680px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 140px auto 48px;
+    }
+    
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 40px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 22px auto 92px;
+        text-align: center;
+    }
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto;
+    }
 }

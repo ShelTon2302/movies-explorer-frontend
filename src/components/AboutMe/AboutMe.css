@@ -67,3 +67,50 @@
     grid-row-end: 5;
     margin: 0 0 auto auto;
 }
+
+@media screen and (min-width: 700px) and (max-width: 1180px){
+    .AboutMe {
+        width: 668px;
+    }
+
+    .AboutMe__title {
+        padding-top: 88px;
+        padding-bottom: 22px;
+    }
+    
+    .AboutMe__grid {
+        margin: 65px auto 0;
+        grid-template-columns: 364px 255px;
+        gap: 0 49px;
+    
+    }
+    
+    .AboutMe__name{
+        margin: 0 auto 15px 0;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 20px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        padding-bottom: 30;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__foto {
+        margin: 0 0 auto auto;
+        width: 255px;
+        height: 307px;
+    }
+
+    .AboutMe__link {
+        margin-top: -11px;
+    }
+}

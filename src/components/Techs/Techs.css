@@ -68,3 +68,40 @@
 .Techs__listItem:last-child {
     margin: 0;
 }
+
+@media screen and (min-width: 700px) and (max-width: 1180px){
+    .Techs__content {
+        width: 668px;
+    }
+
+    .Techs__title {
+        padding-top: 90px;
+    }
+    
+    .Techs__titleText {
+        margin: 80px auto 22px;
+    }
+
+    .Techs__text {
+        margin: 0 auto 83px;
+    }
+
+    .Techs__list {
+        width: 648px;
+        padding: 0 0 90px;
+
+    }
+    
+    .Techs__text {
+        width: 400px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .Techs__listItem {
+        margin: 0 10px 0 0;
+        width: 84px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

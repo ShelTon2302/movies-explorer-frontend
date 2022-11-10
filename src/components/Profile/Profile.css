@@ -4,7 +4,7 @@
 }
 
 .Profile__title {
-    margin: 0 auto 105px;
+    margin: 0 auto 125px;
     padding-top: 74px;
     font-weight: 500;
     font-size: 24px;
@@ -47,7 +47,7 @@
 }
 
 .Profile_button {
-    margin: 104px auto 16px;
+    margin: 204px auto 16px;
     background: none;
     border: none;
     font-weight: 400;

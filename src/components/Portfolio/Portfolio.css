@@ -35,3 +35,11 @@
     margin: 0 auto;
     padding-top: 16px;
 }
+
+@media screen and (min-width: 700px) and (max-width: 1180px){
+    .Portfolio {
+        width: 668px;
+        margin: 91px auto 125px;
+    }
+    
+}

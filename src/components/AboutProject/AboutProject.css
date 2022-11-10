@@ -11,8 +11,6 @@
     line-height: 27px;
     letter-spacing: -0.04em;
     color: #FFFFFF;
-
-
 }
 
 .AboutProject__textArea {
@@ -82,4 +80,35 @@
     color: #FFF;
     font-weight: 400;
     border-left: 1px solid #303030;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1180px){
+    .AboutProject {
+        width: 668px;
+    }
+    
+    .AboutProject__title {
+        width: 600px;
+        margin: 90px auto 23px 0;
+    }
+    
+    .AboutProject__textArea {
+        margin: 0 0 93px;
+        gap: 22px 30px;
+    }
+    
+    .AboutProject__text {
+        font-size: 12px;
+        line-height: 18px;
+        color: #FFFFFF;
+    }
+
+    .AboutProject__timeBar {
+        width: 100%;
+        grid-template-columns: 140px 528px;
+        grid-template-rows: repeat(2, 36px);
+        gap: 5px 0px;
+        margin: 0 0 80px;
+    }
+    
 }
