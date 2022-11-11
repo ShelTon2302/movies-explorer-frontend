@@ -8,13 +8,13 @@ function Header(props) {
       <header className={`Header${props.isAbout ? ' Header_backgroud_blue' : ''}`}>
         {props.isAbout 
           ? 
-            <div className="Header__about">
+            <div className="Header__content">
               <img className="Header__logo" src={logo} alt="logo"></img>
               <Link className="Header__regLink" to="/signup">Регистрация</Link>
               <Link className="Header__logLink" to="/signin">Войти </Link>
             </div>
           :
-            <>
+            <div className="Header__content">
               <Link to="/"><img className="Header__logo" src={logo} alt="logo"></img></Link>
               <nav className="Header__menu">
                 <NavLink to="/movies" activeClassName="Header__menuLink_active" className="Header__menuLink">Фильмы</NavLink>
@@ -24,7 +24,7 @@ function Header(props) {
                 <p className="Header__profileText">Аккаунт</p>
                 <Link className="Header__profileLogo" to="/profile"></Link>
               </div>
-            </>}
+            </div>}
       </header>
     );
   }

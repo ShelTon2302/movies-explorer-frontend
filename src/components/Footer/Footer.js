@@ -7,7 +7,7 @@ function Footer() {
             <div className="Footer__bar">
                 <p className="Footer__text">Github</p>
                 <p className="Footer__text">Яндекс.Практикум</p>
-                <p className="Footer__text">&copy; 2020</p>
+                <p className="Footer__text Footer__text_color_grey">&copy; 2020</p>
             </div>
         </footer>
     );

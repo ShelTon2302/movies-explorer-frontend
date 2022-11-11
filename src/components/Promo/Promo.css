@@ -85,3 +85,42 @@
         margin: 0 auto;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .Promo {
+        padding-bottom: 30px;
+    }
+
+    .Promo__info {
+        width: 300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 70px auto 44px;
+        width: 210px;
+        height: 206px;    
+    }
+
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 30px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: -0.04em;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 24px auto 80px;
+        text-align: center;
+    }
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto;
+    }
+}

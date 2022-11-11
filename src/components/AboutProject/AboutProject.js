@@ -7,7 +7,7 @@ function AboutProject() {
             <div className="AboutProject__textArea">
                 <h3 className="AboutProject__textTitle">Дипломный проект включал 5 этапов</h3>
                 <h3 className="AboutProject__textTitle">На выполнение диплома ушло 5 недель</h3>
-                <p className="AboutProject__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+                <p className="AboutProject__text AboutProject__text_position_another">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
                 <p className="AboutProject__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
             </div>
             <div className="AboutProject__timeBar">

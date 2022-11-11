@@ -6,12 +6,18 @@ function Portfolio() {
         <section className="Portfolio">
             <h2 className="Portfolio__title">Портфолио</h2>
             <div className="Portfolio__table">
-                <h3 className="Portfolio__item">Статичный сайт</h3>
-                <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
-                <h3 className="Portfolio__item">Адаптивный сайт</h3>
-                <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
-                <h3 className="Portfolio__item">Одностраничное приложение</h3>
-                <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                <div className="Portfolio__tableRow">
+                    <h3 className="Portfolio__item">Статичный сайт</h3>
+                    <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                </div>
+                <div className="Portfolio__tableRow">
+                    <h3 className="Portfolio__item">Адаптивный сайт</h3>
+                    <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                </div>
+                <div className="Portfolio__tableRow">
+                    <h3 className="Portfolio__item">Одностраничное приложение</h3>
+                    <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                </div>
             </div>
         </section>
     );
