@@ -1,6 +1,6 @@
 .Footer {
-    min-width: 1140px;
-    margin: 0 auto;
+    width: 100;
+    margin: 0 70px;
 }
 
 .Footer__title {
@@ -19,7 +19,7 @@
 .Footer__bar {
     display: flex;
     flex-direction: row-reverse;
-    width: 100%;
+    min-width: 1040px;
     margin: 20px 0 0;
 }
 
@@ -39,16 +39,12 @@
 
 @media screen and (min-width: 700px) and (max-width: 1180px){
     .Footer {
-        min-width: 640px;
-        max-width: 1120px;
         margin: 0 30px;
     }
 }
 
 @media screen and (max-width: 700px){
     .Footer {
-        min-width: 300px;
-        max-width: 300px;
         margin: 0 auto;
     }
 
@@ -60,9 +56,8 @@
 
     .Footer__bar {
         display: grid;
-        grid-template-columns: 100%;
+        grid-template-columns: 300px;
         grid-template-rows: auto auto auto;
-        width: 100%;
         margin: 32px 0 0;
     }
     

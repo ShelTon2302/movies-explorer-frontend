@@ -95,3 +95,68 @@
     line-height: 18px;
     color: #FFFFFF;
 }
+
+@media screen and (min-width: 520px) and (max-width: 900px){  
+    .SearchForm {
+        width: 708px;
+        margin: 86px auto 0;
+    }
+
+    .SearchForm__button {
+        width: 60px;
+        height: 36px;
+    }
+    
+    .SearchForm__input {
+        width: 582px;
+        padding-right: 5px;
+    }
+    
+    .SearchForm__newCheckbox {
+        margin: 26px 0 61px 265px;
+    }
+
+    .SearchForm__newCheckboxText {
+        margin: 16px auto 49px 12px;
+    }    
+}
+
+@media screen and (max-width: 520px){  
+    .SearchForm {
+        width: 292px;
+        margin: 84px auto 0;
+    }
+
+    .SearchForm__icon {
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 1px;
+    }
+
+    .SearchForm__button {
+        width: 60px;
+        height: 36px;
+        margin: 5px -3px 0 0;
+    }
+    
+    .SearchForm__input {
+        width: 200px;
+        padding-right: 5px;
+        margin: 9px 0 0 -28px;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+    }
+
+    .SearchForm__newCheckbox {
+        margin: 36px 0 61px 72px;
+    }
+
+    .SearchForm__newCheckboxText {
+        margin: 23px auto 49px 12px;
+        font-size: 11px;
+        line-height: 18px;
+    }    
+}

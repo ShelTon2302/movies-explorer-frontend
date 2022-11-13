@@ -35,7 +35,7 @@ function App() {
             <p className="AuthForm__inputName">Имя</p>
             <input 
                 type="text" 
-                value="Виталий" 
+                defaultValue="Виталий" 
                 className="AuthForm__input" 
                 required 
             />

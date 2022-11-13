@@ -67,7 +67,7 @@
 .Header__closeButton {
     width: 31px;
     height:  31px;
-    margin: 22.44px 22.44px 0 auto;
+    margin: 22.44px 30.44px 0 auto;
     background: url(../../images/closeIcon.svg);
     background-size: cover;
     border: none;
@@ -122,7 +122,7 @@
 }
 
 @media screen and (max-width: 520px) {
-    .Header__content {
+    .Header__aboutContent {
         margin: 0 14px;
     }
 
@@ -159,13 +159,17 @@
     }
 
     .Header__link {
-        margin-left: 30px;
+        margin-left: 14px;
+    }
+
+    .Header__closeButton {
+        margin: 14px 30px 2px auto;
     }
 
     .Header__button {
-        width: 40px;
+        width: 30px;
         height: 43px;
-        margin: 15px 14px 16px auto;
+        margin: 15px 18px 16px auto;
         visibility: visible;
     }
 

@@ -33,3 +33,32 @@
     text-align: center;
     color: #4285F4;
 }
+
+@media screen and (min-width: 520px) and (max-width: 900px){  
+    .NotFound__title {
+        padding-top: 408px;
+    }
+}
+
+@media screen and (max-width: 520px){  
+    .NotFound__title {
+        padding-top: 329px;
+        width: 300px;
+        font-size: 80px;
+        line-height: 97px;
+    }
+
+    .NotFound__description {
+        width: 300px;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 10px auto 281px;
+    }
+
+    .NotFound__link {
+        width: 36px;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0 calc(50% - 18px) 60px;
+    }
+}

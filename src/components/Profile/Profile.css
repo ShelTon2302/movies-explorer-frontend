@@ -62,5 +62,33 @@
     margin: 0 auto;
     padding-bottom: 70px;
     color: #EE3465;
+}
 
+@media screen and (min-width: 520px) and (max-width: 900px){  
+    .Profile__title {
+        padding-top: 236px;
+        margin-bottom: 96px;
+    }
+    
+    .Profile_button {
+        margin: 196px auto 16px;
+    }    
+}
+
+@media screen and (max-width: 520px){  
+    .Profile {
+        width: 260px;
+        margin: 0 auto;
+    }
+    
+    .Profile__title {
+        padding-top: 70px;
+        margin-bottom: 80px;
+    }
+
+    .Profile_button {
+        margin: 362px auto 16px;
+        font-size: 12px;
+        line-height: 15px;
+    }    
 }

@@ -13,14 +13,14 @@ function AuthForm(props) {
                     <p className="AuthForm__inputName">E-mail</p>
                     <input 
                         type="text" 
-                        value="pochta@yandex.ru" 
+                        defaultValue="pochta@yandex.ru" 
                         className="AuthForm__input" 
                         required 
                     />
                     <p className="AuthForm__inputName">Пароль</p>
                     <input 
                         type="password" 
-                        value="pochta@yandex.ru" 
+                        defaultValue="pochta@yandex.ru" 
                         className="AuthForm__input" 
                         required 
                     />

@@ -21,3 +21,31 @@
     visibility: hidden;
     margin-bottom: 54px;
 }
+
+@media screen and (min-width: 520px) and (max-width: 900px){  
+    .MoviesCardList {
+        margin: 60px auto 0;
+        width: 708px;
+    }
+    
+    .MoviesCardList__yetBtn {
+        margin: 80px auto 80px;
+    }    
+}
+
+@media screen and (max-width: 520px){  
+    .MoviesCardList {
+        margin: 28px auto 0;
+        width: 300px;
+    }
+    
+    .MoviesCardList__yetBtn {
+        margin: 80px auto 80px;
+    }
+
+    .MoviesCardList__yetBtn {
+        margin: 70px auto 99px;
+        width: 240px;
+
+    }
+}

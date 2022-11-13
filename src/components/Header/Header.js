@@ -26,23 +26,24 @@ function Header(props) {
             <Link className="Header__logLink" to="/signin">Войти </Link>
           </div>
         :
-          <div className={`Header__content${enableMenu ? ' Header__content_visibility_enable' : ''}`}>
-            <button type='button' className="Header__closeButton" onClick={closeMenu} hidden={!enableMenu}></button>
+          <>
             <button type='button' className="Header__button" onClick={openMenu} hidden={enableMenu}></button>
+            <div className={`Header__content${enableMenu ? ' Header__content_visibility_enable' : ''}`}>
+              <button type='button' className="Header__closeButton" onClick={closeMenu} hidden={!enableMenu}></button>
 
-            <Navigation />
+              <Navigation />
 
-            {/*<Link to="/"><img className="Header__logo" src={logo} alt="logo"></img></Link>
-            <nav className="Header__menu">
-              <NavLink to="/movies" activeClassName="Header__menuLink_active" className="Header__menuLink">Фильмы</NavLink>
-              <NavLink to="/saved-movies" activeClassName="Header__menuLink_active" className="Header__menuLink">Сохраненные фильмы</NavLink>
-            </nav>
-            <div className="Header__profileGroup">
-              <p className="Header__profileText">Аккаунт</p>
-              <Link className="Header__profileLogo" to="/profile"></Link>
-            </div>*/}
-          </div>}
-
+              {/*<Link to="/"><img className="Header__logo" src={logo} alt="logo"></img></Link>
+              <nav className="Header__menu">
+                <NavLink to="/movies" activeClassName="Header__menuLink_active" className="Header__menuLink">Фильмы</NavLink>
+                <NavLink to="/saved-movies" activeClassName="Header__menuLink_active" className="Header__menuLink">Сохраненные фильмы</NavLink>
+              </nav>
+              <div className="Header__profileGroup">
+                <p className="Header__profileText">Аккаунт</p>
+                <Link className="Header__profileLogo" to="/profile"></Link>
+              </div>*/}
+            </div>
+          </>}    
     </header>
   );
   }

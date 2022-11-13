@@ -13,7 +13,7 @@
 }
 
 .AuthForm__title {
-    margin: 40px auto 40px 0;
+    margin: 38px auto 40px 0;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
@@ -36,9 +36,10 @@
 
 .AuthForm__input {
     width: 100%;
-    margin: 5px 0 24px;
+    margin: 4px 0 24px;
     background: none;
     border: none;
+    padding-left: 1px;
     padding-bottom: 10px;
     border-bottom: 1px solid #424242;
     font-weight: 400;
@@ -50,7 +51,7 @@
 .AuthForm__submit {
     width: 100%;
     height: 45px;
-    margin: 69px 0 16px;
+    margin: 67px 0 16px;
     padding: 0;
     background: #4285F4;
     border: none;
@@ -90,4 +91,46 @@
     line-height: 17px;
     text-align: center;
     color: #4285F4;
+}
+
+@media screen and (min-width: 520px) and (max-width: 900px){  
+    .AuthForm__logo {
+        margin: 162px auto 0 0;
+    }
+}
+
+@media screen and (max-width: 520px){  
+    .AuthForm {
+        width: 260px;
+        padding-top: 56px;
+
+    }
+    
+    .AuthForm__logo {
+        display: block;
+        margin: 0 auto 0;
+    }
+
+    .AuthForm__title {
+        margin: 50px auto 80px;
+        text-align: center;
+    }
+
+    .AuthForm__submit {
+        margin: 157px 0 14px;
+        font-size: 12px;
+        line-height: 15px;
+
+    }
+
+    .AuthForm__text {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .AuthForm__link {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
 }
