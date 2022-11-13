@@ -1,6 +1,8 @@
 .Header {
     width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: row;
 }
 
 .Header_backgroud_blue {
@@ -8,6 +10,14 @@
 }
 
 .Header__content {
+    width: 100%;    
+    margin: 0 70px 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header__aboutContent {
+    width: 100%;
     margin: 0 70px;
     display: flex;
     flex-direction: row;
@@ -16,15 +26,19 @@
 .Header__logo {
     width: 38px;
     height: 38px;
-    margin: 18px 0 18px;
 }
 
-.Header__logo_visibility_hidden {
+.Header__link {
+    width: 38px;
+    height: 38px;
+    margin: 18px 0 18px 70px;
+}
+
+.Header__link_visibility_hidden {
     visibility: hidden;
 }
 
 .Header__regLink {
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
@@ -50,65 +64,64 @@
     border-radius: 3px;
 }
 
-.Header__menu {
-    margin: 28px auto;
-}
-
-.Header__menuLink {
-    margin: 0 0 0 16px;
-    padding: 0;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
-    text-align: right;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.Header__menuLink:first-child {
-    padding-left: 47px;
-}
-
-.Header__menuLink_active {
-    text-decoration: underline;
-}
-
-.Header__profileGroup {
-    margin: 21px 70px 23px 0;
-    width: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.Header__profileText {
-    margin: 6px 0 8px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
-}
-
-.Header__profileLogo {
-    width: 26px;
-    height: 30px;
-    background: url(../../images/header_profilelogo.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-color: #313131;
+.Header__closeButton {
+    width: 31px;
+    height:  31px;
+    margin: 22.44px 22.44px 0 auto;
+    background: url(../../images/closeIcon.svg);
+    background-size: cover;
     border: none;
-    border-radius: 4px;
 }
 
-@media screen and (min-width: 500px) and (max-width: 900px){
+.Header__closeButton_visibility_enable {
+    visibility: visible;
+}
+
+.Header__button {
+    width: 1px;
+    height: 1px;
+    border: none;
+    background: url(../../images/header_menu.svg);
+    background-size: cover;
+    visibility: hidden;
+}
+
+@media screen and (min-width: 520px) and (max-width: 900px){  
+    .Header__aboutContent {
+        margin-right: 30px;
+    }
+    
     .Header__content {
-        margin: 0 30px;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 520px;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__content_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__link {
+        margin-left: 30px;
+    }
+
+    .Header__button {
+        width: 44px;
+        height: 44px;
+        margin: 15px 30px 15px auto;
+        visibility: visible;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
     .Header__content {
         margin: 0 14px;
     }
@@ -126,4 +139,34 @@
         padding-bottom: 0;
         font-size: 10px;
     }
+
+    .Header__content {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 100%;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__content_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__link {
+        margin-left: 30px;
+    }
+
+    .Header__button {
+        width: 40px;
+        height: 43px;
+        margin: 15px 14px 16px auto;
+        visibility: visible;
+    }
+
 }
