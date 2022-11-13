@@ -2,7 +2,7 @@ import './Techs.css';
 
 function Techs() {
     return (
-        <section className="Techs">
+        <section className="Techs" id='techs'>
             <div className="Techs__content">
                 <h2 className="Techs__title">Технологии</h2>
                 <h3 className="Techs__titleText">7 технологий</h3>

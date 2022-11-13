@@ -3,7 +3,7 @@ import foto from '../../images/aboutme_foto.svg';
 
 function AboutMe() {
     return (
-        <section className="AboutMe">
+        <section className="AboutMe" id='aboutMe'>
             <h2 className="AboutMe__title">Студент</h2>
             <div className="AboutMe__grid">
                 <img className="AboutMe__foto" src={foto} alt="Foto"></img>
