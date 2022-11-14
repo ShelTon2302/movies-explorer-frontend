@@ -10,6 +10,7 @@
     margin: 60px auto 80px;
     background: none;
     border: 1px solid #424242;
+    border-radius: 6px;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -22,7 +23,7 @@
     margin-bottom: 54px;
 }
 
-@media screen and (min-width: 520px) and (max-width: 900px){  
+@media screen and (min-width: 720px) and (max-width: 1180px){  
     .MoviesCardList {
         margin: 60px auto 0;
         width: 708px;
@@ -33,7 +34,9 @@
     }    
 }
 
-@media screen and (max-width: 520px){  
+
+
+@media screen and (max-width: 730px){  
     .MoviesCardList {
         margin: 28px auto 0;
         width: 300px;

@@ -61,7 +61,7 @@
     height: 122px;
 }
 
-@media screen and (max-width: 520px){  
+@media screen and (max-width: 730px){  
     .MoviesCard {
         margin-bottom: 20px;
         display: flex;

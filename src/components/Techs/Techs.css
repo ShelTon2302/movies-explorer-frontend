@@ -131,6 +131,7 @@
     }
 
     .Techs__list {
+        width: auto;
         margin: 0 53px;
         display: grid;
         grid-template-columns: repeat(2, 84px);

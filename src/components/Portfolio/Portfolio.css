@@ -16,6 +16,7 @@
 .Portfolio__table {
     width: 100%;
     margin: 50px 0 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
 }
@@ -41,6 +42,7 @@
     font-size: 30px;
     line-height: 50px;
     letter-spacing: -0.04em;
+    text-decoration: none;
     color: #FFFFFF;
 }
 

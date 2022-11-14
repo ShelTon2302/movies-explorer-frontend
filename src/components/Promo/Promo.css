@@ -36,10 +36,15 @@
     opacity: 0.5;
 }
 
+.Promo__menuArea {
+    width: 1140px;
+    margin: 0 auto;
+}
+
 .Promo__btn {
     width: 129px;
     height: 36px;
-    margin: 0 auto 75px 70px;
+    margin: 0 auto 75px;
     background: none;
     border: 1px solid rgba(255, 255, 255, .6);
     border-radius: 3px;
@@ -55,7 +60,7 @@
 }
 
 .Promo__menu {
-    margin: 0 auto 75px 70px;
+    margin: 0 auto 75px;
     padding-bottom: 36.67px;
 }
 
@@ -76,8 +81,6 @@
 
     .Promo__info {
         width: 680px;
-        margin: 0 auto;
-        display: flex;
         flex-direction: column;
     }
 
@@ -98,6 +101,10 @@
         margin: 22px auto 92px;
         text-align: center;
     }
+
+    .Promo__menuArea {
+        width: 680px;
+    }    
 
     .Promo__btn {
         display: block;
@@ -148,6 +155,10 @@
         margin: 24px auto 80px;
         text-align: center;
     }
+
+    .Promo__menuArea {
+        width: 300px;
+    }    
 
     .Promo__btn {
         display: block;

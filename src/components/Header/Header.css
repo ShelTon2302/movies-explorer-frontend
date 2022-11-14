@@ -1,8 +1,6 @@
 .Header {
     width: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: row;
 }
 
 .Header_backgroud_blue {
@@ -10,15 +8,22 @@
 }
 
 .Header__content {
-    width: 100%;    
-    margin: 0 70px 0 0;
+    width: 1140px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
 }
 
-.Header__aboutContent {
-    width: 100%;
-    margin: 0 70px;
+.Header__allPage {
+    width: 100%;    
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header__about {
+    width: 100%;    
+    margin: 0;
     display: flex;
     flex-direction: row;
 }
@@ -31,7 +36,7 @@
 .Header__link {
     width: 38px;
     height: 38px;
-    margin: 18px 0 18px 70px;
+    margin: 18px 0 ;
 }
 
 .Header__link_visibility_hidden {
@@ -86,12 +91,12 @@
     visibility: hidden;
 }
 
-@media screen and (min-width: 520px) and (max-width: 900px){  
-    .Header__aboutContent {
-        margin-right: 30px;
+@media screen and (min-width: 700px) and (max-width: 1180px){  
+    .Header__content {
+        width: 648px;
     }
     
-    .Header__content {
+    .Header__allPage {
         visibility: hidden;
         display: flex;
         flex-direction: column;    
@@ -105,25 +110,21 @@
         height: 100vh;
     }
 
-    .Header__content_visibility_enable {
+    .Header__allPage_visibility_enable {
         visibility: visible;
-    }
-
-    .Header__link {
-        margin-left: 30px;
     }
 
     .Header__button {
         width: 44px;
         height: 44px;
-        margin: 15px 30px 15px auto;
+        margin: 15px 0 15px auto;
         visibility: visible;
     }
 }
 
-@media screen and (max-width: 520px) {
-    .Header__aboutContent {
-        margin: 0 14px;
+@media screen and (max-width: 700px) {
+    .Header__content {
+        width: 284px;
     }
 
     .Header__regLink {
@@ -140,7 +141,7 @@
         font-size: 10px;
     }
 
-    .Header__content {
+    .Header__allPage {
         visibility: hidden;
         display: flex;
         flex-direction: column;    
@@ -154,12 +155,8 @@
         height: 100vh;
     }
 
-    .Header__content_visibility_enable {
+    .Header__allPage_visibility_enable {
         visibility: visible;
-    }
-
-    .Header__link {
-        margin-left: 14px;
     }
 
     .Header__closeButton {
@@ -169,8 +166,50 @@
     .Header__button {
         width: 30px;
         height: 43px;
-        margin: 15px 18px 16px auto;
+        margin: 15px 0 16px auto;
         visibility: visible;
     }
 
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1160px){  
+    .MoviesCardList {
+        width: 880px;
+    }    
+}
+
+@media screen and (min-width: 760px) and (max-width: 900px){  
+    .MoviesCardList {
+        margin: 60px auto 0;
+        width: 708px;
+    }
+    
+    .MoviesCardList__yetBtn {
+        margin: 80px auto 80px;
+    }    
+}
+
+@media screen and (min-width: 520px) and (max-width: 760px){  
+    .MoviesCardList {
+        width: 500px;
+    }    
+}
+
+
+@media screen and (max-width: 520px){  
+    .MoviesCardList {
+        margin: 28px auto 0;
+        width: 300px;
+    }
+    
+    .MoviesCardList__yetBtn {
+        margin: 80px auto 80px;
+    }
+
+    .MoviesCardList__yetBtn {
+        margin: 70px auto 99px;
+        width: 240px;
+
+    }
 }

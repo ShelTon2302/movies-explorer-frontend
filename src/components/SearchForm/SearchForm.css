@@ -33,11 +33,17 @@
     border: none;
 }
 
+.SearchForm__input:hover {
+    color: #fff;
+    background-color: #8B8B8B;
+}
+
 .SearchForm__button {
-    width: 61px;
-    height: 36px;
-    background: #4285F4;
+    width: 59px;
+    height: 34px;
+    border: 1px solid #4285F4;
     border-radius: 48px;
+    background: #4285F4;
     font-size: 11px;
     line-height: 18px;
     text-align: center;
@@ -96,7 +102,7 @@
     color: #FFFFFF;
 }
 
-@media screen and (min-width: 520px) and (max-width: 900px){  
+@media screen and (min-width: 720px) and (max-width: 1180px){  
     .SearchForm {
         width: 708px;
         margin: 86px auto 0;
@@ -120,8 +126,7 @@
         margin: 16px auto 49px 12px;
     }    
 }
-
-@media screen and (max-width: 520px){  
+@media screen and (max-width: 730px){  
     .SearchForm {
         width: 292px;
         margin: 84px auto 0;
@@ -160,3 +165,4 @@
         line-height: 18px;
     }    
 }
+
