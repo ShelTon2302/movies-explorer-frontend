@@ -36,13 +36,20 @@
     border-top: none;
 }
 
+.Portfolio__link {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
 .Portfolio__item {
     margin: 0;
     font-weight: 400;
     font-size: 30px;
     line-height: 50px;
     letter-spacing: -0.04em;
-    text-decoration: none;
     color: #FFFFFF;
 }
 

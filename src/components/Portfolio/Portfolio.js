@@ -7,16 +7,24 @@ function Portfolio() {
             <h2 className="Portfolio__title">Портфолио</h2>
             <ul className="Portfolio__table">
                 <li className="Portfolio__tableRow">
-                    <a className="Portfolio__item" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'>Статичный сайт</a>
-                    <a className="Portfolio__item" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'><img className="Portfolio__img" src={imgLink} alt='ссылка'></img></a>
+                    <a className="Portfolio__link" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'>
+                        <h3 className="Portfolio__item">Статичный сайт</h3>
+                        <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                    </a>
                 </li>
                 <li className="Portfolio__tableRow">
-                    <a className="Portfolio__item" href='https://github.com/ShelTon2302/russian-travel' target='_blank' rel='noreferrer'>Адаптивный сайт</a>
-                    <a className="Portfolio__item" href='https://github.com/ShelTon2302/russian-travel' target='_blank' rel='noreferrer'><img className="Portfolio__img" src={imgLink} alt='ссылка'></img></a>
+                    <a className="Portfolio__link" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'>
+                        <h3 className="Portfolio__item">Адаптивный сайт</h3>
+                        <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                    </a>
+
                 </li>
                 <li className="Portfolio__tableRow">
-                    <a className="Portfolio__item" href='https://project-mesto.nomoredomains.icu/' target='_blank' rel='noreferrer'>Одностраничное приложение</a>
-                    <a className="Portfolio__item" href='https://project-mesto.nomoredomains.icu/' target='_blank' rel='noreferrer'><img className="Portfolio__img" src={imgLink} alt='ссылка'></img></a>
+                    <a className="Portfolio__link" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'>
+                        <h3 className="Portfolio__item">Одностраничное приложение</h3>
+                        <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
+                    </a>
+
                 </li>
             </ul>
         </section>
