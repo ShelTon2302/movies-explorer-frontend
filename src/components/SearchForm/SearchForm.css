@@ -33,21 +33,22 @@
     border: none;
 }
 
-.SearchForm__input:hover {
-    color: #fff;
-    background-color: #8B8B8B;
-}
-
 .SearchForm__button {
     width: 59px;
     height: 34px;
     border: 1px solid #4285F4;
     border-radius: 48px;
     background: #4285F4;
+    transition: background 1s ease-out;
     font-size: 11px;
     line-height: 18px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.SearchForm__button:hover {
+    background-color: #0e65f0;
+    transition: background 1s ease-out;
 }
 
 .SearchForm__checkbox {
@@ -70,15 +71,26 @@
     background-color: #EE3465;
     border: 1px solid #EE3465;
     border-radius: 20px;
-    transition: background-color 1s ease-out;
+    transition: background 1s ease-out;
+}
+
+.SearchForm__newCheckbox:hover {
+    background-color: #e6849e;
+    transition: background 1s ease-out;
 }
 
 .SearchForm__checkbox:checked + .SearchForm__newCheckbox {
     border: 1px solid #3DDC84;
     background-position: 160% 25%;
     background-color: #3DDC84;
-    transition: background-color 1s ease-out;
+    transition: background 1s ease-out;
 }
+
+.SearchForm__checkbox:checked + .SearchForm__newCheckbox:hover {
+    background-color: #8cd3ac;
+    transition: background 1s ease-out;
+}
+
 
 .SearchForm__checkbox:disabled + .SearchForm__newCheckbox {
     border: 1px solid #8B8B8B;

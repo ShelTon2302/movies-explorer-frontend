@@ -1,45 +1,27 @@
 import './App.css';
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import MainPage from '../MainPage/MainPage';
+import Main from '../Main/Main';
+import Login from '../Login/Login';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import AuthForm from '../AuthForm/AuthForm';
 import Profile from '../Profile/Profile';
 import NotFound from '../NotFound/NotFound';
+import Register from '../../Register/Register';
 
 function App() {
   return (
     <section className="App">
       <Switch>
         <Route exact path="/">
-          <MainPage />
+          <Main />
         </Route>
         <Route path="/signin">
-          <AuthForm 
-            title='Рады видеть!'
-            buttonText='Войти'
-            text='Ещё не зарегистрированы?'
-            link='/signup'
-            linkText='Регистрация'
-          />
+          <Login />
         </Route>
         <Route path="/signup">
-          <AuthForm
-            title='Добро пожаловать!'
-            buttonText='Зарегистрироваться'
-            text='Уже зарегистрированы?'
-            link='/signin'
-            linkText='Войти'
-          >
-            <p className="AuthForm__inputName">Имя</p>
-            <input 
-                type="text" 
-                defaultValue="Виталий" 
-                className="AuthForm__input" 
-                required 
-            />
-          </AuthForm> 
+          <Register />
         </Route>
         <Route path="/movies">
           <Movies />

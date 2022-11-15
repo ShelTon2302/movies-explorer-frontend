@@ -3,8 +3,14 @@
     background-color: #073042;
 }
 
-.Promo__info {
+.Promo__content {
     width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.Promo__info {
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row-reverse;
@@ -37,7 +43,7 @@
 }
 
 .Promo__menuArea {
-    width: 1140px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -75,12 +81,13 @@
 }
 
 @media screen and (min-width: 700px) and (max-width: 1180px){
-    .Promo {
+    .Promo__content {
         padding-bottom: 38px;
+        width: 680px;
     }
 
     .Promo__info {
-        width: 680px;
+        width: 100%s;
         flex-direction: column;
     }
 
@@ -124,12 +131,13 @@
 }
 
 @media screen and (max-width: 700px) {
-    .Promo {
+    .Promo__content {
         padding-bottom: 7px;
+        width: 300px;
     }
 
     .Promo__info {
-        width: 300px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -155,10 +163,6 @@
         margin: 24px auto 80px;
         text-align: center;
     }
-
-    .Promo__menuArea {
-        width: 300px;
-    }    
 
     .Promo__btn {
         display: block;

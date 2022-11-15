@@ -13,14 +13,14 @@ function Portfolio() {
                     </a>
                 </li>
                 <li className="Portfolio__tableRow">
-                    <a className="Portfolio__link" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'>
+                    <a className="Portfolio__link" href='https://github.com/ShelTon2302/russian-travel' target='_blank' rel='noreferrer'>
                         <h3 className="Portfolio__item">Адаптивный сайт</h3>
                         <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
                     </a>
 
                 </li>
                 <li className="Portfolio__tableRow">
-                    <a className="Portfolio__link" href='https://github.com/ShelTon2302/how-to-learn' target='_blank' rel='noreferrer'>
+                    <a className="Portfolio__link" href='https://project-mesto.nomoredomains.icu' target='_blank' rel='noreferrer'>
                         <h3 className="Portfolio__item">Одностраничное приложение</h3>
                         <img className="Portfolio__img" src={imgLink} alt='ссылка'></img>
                     </a>
