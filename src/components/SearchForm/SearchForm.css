@@ -15,7 +15,7 @@
 .SearchForm__icon {
     width: 14px;
     height: 14px;
-    margin: 0 auto auto 6px;
+    margin: 0 6px auto;
     padding: 9px;
     border: 1px solid #424242;
     border-radius: 50%;
@@ -114,7 +114,57 @@
     color: #FFFFFF;
 }
 
-@media screen and (min-width: 720px) and (max-width: 1180px){  
+@media screen and (min-width: 990px) and (max-width: 1180px){
+    .SearchForm {
+        width: auto;
+        margin: 86px 20px 0;
+    }
+
+    .SearchForm__button {
+        width: 60px;
+        height: 36px;
+    }
+    
+    .SearchForm__input {
+        width: auto;
+        padding-right: 5px;
+    }
+    
+    .SearchForm__newCheckbox {
+        margin: 26px 0 61px calc(50% - 80px);
+    }
+
+    .SearchForm__newCheckboxText {
+        margin: 16px auto 49px 12px;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .SearchForm {
+        width: auto;
+        margin: 86px 70px 0;
+    }
+
+    .SearchForm__button {
+        width: 60px;
+        height: 36px;
+    }
+    
+    .SearchForm__input {
+        width: auto;
+        padding-right: 5px;
+    }
+    
+    .SearchForm__newCheckbox {
+        margin: 26px 0 61px calc(50% - 80px);
+    }
+
+    .SearchForm__newCheckboxText {
+        margin: 16px auto 49px 12px;
+    }    
+}
+
+@media screen and (min-width: 730px) and (max-width: 840px){  
     .SearchForm {
         width: 708px;
         margin: 86px auto 0;
@@ -131,14 +181,80 @@
     }
     
     .SearchForm__newCheckbox {
-        margin: 26px 0 61px 265px;
+        margin: 26px 0 61px calc(50% - 80px);
     }
 
     .SearchForm__newCheckboxText {
         margin: 16px auto 49px 12px;
     }    
 }
-@media screen and (max-width: 730px){  
+
+@media screen and (min-width: 570px) and (max-width: 730px) {
+    .SearchForm {
+        width: auto;
+        margin: 86px 10px 0;
+    }
+
+    .SearchForm__button {
+        width: 60px;
+        height: 36px;
+    }
+    
+    .SearchForm__input {
+        width: auto;
+        padding-right: 5px;
+    }
+    
+    .SearchForm__newCheckbox {
+        margin: 26px 0 61px calc(50% - 80px);
+    }
+
+    .SearchForm__newCheckboxText {
+        margin: 16px auto 49px 12px;
+    } 
+}
+
+@media screen and (min-width: 420px) and (max-width: 570px) {
+    .SearchForm {
+        width: auto;
+        margin: 84px 60px 0;
+    }
+
+    .SearchForm__icon {
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 1px;
+    }
+
+    .SearchForm__button {
+        width: 60px;
+        height: 36px;
+        margin: 5px -3px 0 0;
+    }
+    
+    .SearchForm__input {
+        width: auto;
+        padding-right: 5px;
+        margin: 9px 0 0 -28px;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+    }
+
+    .SearchForm__newCheckbox {
+        margin: 36px 0 61px calc(50% - 80px);
+    }
+
+    .SearchForm__newCheckboxText {
+        margin: 23px auto 49px 12px;
+        font-size: 11px;
+        line-height: 18px;
+    }  
+}
+
+@media screen and (max-width: 420px){  
     .SearchForm {
         width: 292px;
         margin: 84px auto 0;
