@@ -70,16 +70,13 @@
 }
 
 .Header__closeButton {
+    visibility: hidden;
     width: 31px;
     height:  31px;
     margin: 22.44px 30.44px 0 auto;
     background: url(../../images/closeIcon.svg);
     background-size: cover;
     border: none;
-}
-
-.Header__closeButton_visibility_enable {
-    visibility: visible;
 }
 
 .Header__button {
@@ -122,6 +119,7 @@
     }
 
     .Header__closeButton {
+        visibility: visible;
         margin: 22px 22px 2px auto;
     }
 }
@@ -164,7 +162,7 @@
     }
 
     .Header__closeButton {
-    
+        visibility: visible;
         margin: 14px 14px 2px auto;
     }
 
