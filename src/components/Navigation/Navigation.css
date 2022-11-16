@@ -62,14 +62,14 @@
     border-radius: 4px;
 }
 
-@media screen and (min-width: 1180px){  
+@media screen and (min-width: 990px){  
     .Navigation__menuLink:first-child {
         visibility: hidden;
         width: 1px;
     }    
 }
 
-@media screen and (min-width: 730px) and (max-width: 1180px){  
+@media screen and (min-width: 730px) and (max-width: 990px){  
     .Navigation {
         width: 340px;
         height: calc(100vh - 172.32px);
