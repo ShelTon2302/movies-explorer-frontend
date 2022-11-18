@@ -2,7 +2,7 @@
     margin: 0 auto 70px;
     padding-top: 70px;
     width: 396px;
-    height: 100vh;
+    height: calc(100vh - 70px);
 }
 
 .AuthForm__logo {
@@ -77,8 +77,6 @@
     justify-content: center;
     margin: 0 auto;
     padding-bottom: 70px;
-    
-    
 }
 
 .AuthForm__text {
@@ -111,7 +109,6 @@
     .AuthForm {
         width: 260px;
         padding-top: 56px;
-
     }
     
     .AuthForm__logo {
@@ -128,7 +125,6 @@
         margin: 157px 0 14px;
         font-size: 12px;
         line-height: 15px;
-
     }
 
     .AuthForm__text {
