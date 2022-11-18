@@ -1,0 +1,418 @@
+.Promo {
+    width: 100%;
+    background-color: #073042;
+}
+
+.Promo__content {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.Promo__info {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.Promo__img {
+    width: 310px;
+    height: 304px;
+    margin: 75px 0 auto auto;
+}
+
+.Promo__title {
+    width: 640px;
+    margin: 75px auto 36px 0;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    color: #FFFFFF;
+}
+
+.Promo__notice {
+    width: 310px;
+    margin: 0 auto 146px 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.Promo__menuArea {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Promo__btn {
+    width: 129px;
+    height: 36px;
+    margin: 0 auto 75px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.Promo_btn_enabled {
+    margin-bottom: 20px;
+}
+
+.Promo__menu {
+    margin: 0 auto 75px;
+    padding-bottom: 36.67px;
+}
+
+.Promo__menuLink {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 10px ;
+    text-decoration: none;
+
+}
+
+@media screen and (min-width: 990px) and (max-width: 1180px){
+    .Promo__content {
+        width: auto;
+        margin: 0 20px;
+        padding: 0;
+    }
+    
+    .Promo__info {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .Promo__img {
+        width: 310px;
+        height: 304px;
+        margin: 75px 0 auto auto;
+    }
+    
+    .Promo__title {
+        width: auto;
+        max-width: 640px;
+        margin: 75px auto 36px 0;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 58px;
+        color: #FFFFFF;
+    }
+    
+    .Promo__notice {
+        width: 310px;
+        margin: 0 auto 146px 0;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    
+    .Promo__menuArea {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .Promo__btn {
+        width: 129px;
+        height: 36px;
+        margin: 0 auto 75px;
+        background: none;
+        border: 1px solid rgba(255, 255, 255, .6);
+        border-radius: 3px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    
+    .Promo_btn_enabled {
+        margin-bottom: 20px;
+    }
+    
+    .Promo__menu {
+        margin: 0 auto 75px;
+        padding-bottom: 36.67px;
+    }
+    
+    .Promo__menuLink {
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0 10px ;
+        text-decoration: none;
+    
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .Promo__content {
+        padding-bottom: 38px;
+        margin: 0 70px;
+        width: auto;
+    }
+
+    .Promo__info {
+        width: 100%s;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 140px auto 48px;
+    }
+    
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 40px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 22px auto 92px;
+        text-align: center;
+    }
+
+    .Promo__menuArea {
+        width: 680px;
+    }    
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto 38.67px;
+    }
+
+    .Promo_btn_enabled {
+        margin-bottom: 20px;
+    }
+    
+    .Promo__menu {
+        width: 350px;
+        margin: 0 auto;
+        padding: 0;
+    }   
+}
+
+@media screen and (min-width: 730px) and (max-width: 840px){
+    .Promo__content {
+        padding-bottom: 38px;
+        width: 680px;
+    }
+
+    .Promo__info {
+        width: 100%s;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 140px auto 48px;
+    }
+    
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 40px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 22px auto 92px;
+        text-align: center;
+    }
+
+    .Promo__menuArea {
+        width: 680px;
+    }    
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto 38.67px;
+    }
+
+    .Promo_btn_enabled {
+        margin-bottom: 20px;
+    }
+    
+    .Promo__menu {
+        width: 350px;
+        margin: 0 auto;
+        padding: 0;
+    }   
+}
+
+@media screen and (min-width: 570px) and (max-width: 730px) {
+    .Promo__content {
+        padding-bottom: 38px;
+        margin: 0 10px;
+        width: auto;
+    }
+
+    .Promo__info {
+        width: 100%s;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 140px auto 48px;
+    }
+    
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 40px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 22px auto 92px;
+        text-align: center;
+    }
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto 38.67px;
+    }
+
+    .Promo_btn_enabled {
+        margin-bottom: 20px;
+    }
+    
+    .Promo__menu {
+        width: 350px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+}
+
+@media screen and (min-width: 420px) and (max-width: 570px) {
+    .Promo__content {
+        padding-bottom: 7px;
+        margin: 0 60px;
+        width: auto;
+    }
+
+    .Promo__info {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 70px auto 44px;
+        width: 70%;
+        height: auto;    
+    }
+
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 30px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: -0.04em;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 24px auto 80px;
+        text-align: center;
+    }
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto 24px;
+    }
+
+    .Promo_btn_enabled {
+        margin-bottom: 5px;
+    }
+    
+    .Promo__menu {
+        width: 290px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .Promo__menuLink {
+        margin: 0 5px ;
+
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .Promo__content {
+        padding-bottom: 7px;
+        width: 300px;
+    }
+
+    .Promo__info {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Promo__img {
+        margin: 70px auto 44px;
+        width: 210px;
+        height: 206px;    
+    }
+
+    .Promo__title {
+        width: 100%;
+        margin: 0;
+        font-size: 30px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: -0.04em;
+    }
+
+    .Promo__notice {
+        width: 260px;
+        margin: 24px auto 80px;
+        text-align: center;
+    }
+
+    .Promo__btn {
+        display: block;
+        margin: 0 auto 24px;
+    }
+
+    .Promo_btn_enabled {
+        margin-bottom: 5px;
+    }
+    
+    .Promo__menu {
+        width: 290px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .Promo__menuLink {
+        margin: 0 5px ;
+
+    }
+}

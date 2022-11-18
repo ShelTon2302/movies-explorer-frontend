@@ -1,0 +1,383 @@
+.Header {
+    width: 100%;
+    margin: 0;
+}
+
+.Header_backgroud_blue {
+    background-color: #073042;
+}
+
+.Header__content {
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header__allPage {
+    width: 100%;    
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header__about {
+    width: 100%;    
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.Header__logo {
+    width: 38px;
+    height: 38px;
+}
+
+.Header__link {
+    width: 38px;
+    height: 38px;
+    margin: 18px 0 ;
+}
+
+.Header__link_visibility_hidden {
+    visibility: hidden;
+}
+
+.Header__regLink {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin: 29px 30px 29px auto;
+    text-decoration: none;
+}
+
+.Header__logLink {
+    width: 74px;
+    height: 22px;
+    background: #3DDC84;
+    margin: 21px 0 2px;
+    padding-top: 7px;
+    padding-bottom: 1px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    border: 1px solid #3DDC84;
+    border-radius: 3px;
+}
+
+.Header__closeButton {
+    visibility: hidden;
+    width: 31px;
+    height:  31px;
+    margin: 22.44px 30.44px 0 auto;
+    background: url(../../images/closeIcon.svg);
+    background-size: cover;
+    border: none;
+}
+
+.Header__button {
+    width: 1px;
+    height: 1px;
+    border: none;
+    background: url(../../images/header_menu.svg);
+    background-size: cover;
+    visibility: hidden;
+}
+
+@media screen and (min-width: 990px) and (max-width: 1180px){
+    .Header__content {
+        width: auto;
+        margin: 0 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .Header__allPage {
+        width: 100%;    
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .Header__about {
+        width: 100%;    
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .Header__logo {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .Header__link {
+        width: 38px;
+        height: 38px;
+        margin: 18px 0 ;
+    }
+    
+    .Header__link_visibility_hidden {
+        visibility: hidden;
+    }
+    
+    .Header__regLink {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FFFFFF;
+        margin: 29px 30px 29px auto;
+        text-decoration: none;
+    }
+    
+    .Header__logLink {
+        width: 74px;
+        height: 22px;
+        background: #3DDC84;
+        margin: 21px 0 2px;
+        padding-top: 7px;
+        padding-bottom: 1px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #000000;
+        text-decoration: none;
+        border: 1px solid #3DDC84;
+        border-radius: 3px;
+    }
+    
+    .Header__closeButton {
+        visibility: hidden;
+        width: 31px;
+        height:  31px;
+        margin: 22.44px 30.44px 0 auto;
+        background: url(../../images/closeIcon.svg);
+        background-size: cover;
+        border: none;
+    }
+    
+    .Header__button {
+        width: 1px;
+        height: 1px;
+        border: none;
+        background: url(../../images/header_menu.svg);
+        background-size: cover;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .Header__content {
+        width: 708px;
+    }
+    
+    .Header__allPage {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 520px;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__allPage_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__button {
+        width: 44px;
+        height: 44px;
+        margin: 15px 0 15px auto;
+        visibility: visible;
+    }
+
+    .Header__closeButton {
+        visibility: visible;
+        margin: 22px 22px 2px auto;
+    }
+}
+
+@media screen and (min-width: 730px) and (max-width: 840px){  
+    .Header__content {
+        margin: 0 70px;
+        width: auto;
+    }
+    
+    .Header__allPage {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 520px;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__allPage_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__button {
+        width: 44px;
+        height: 44px;
+        margin: 15px 0 15px auto;
+        visibility: visible;
+    }
+
+    .Header__closeButton {
+        visibility: visible;
+        margin: 22px 22px 2px auto;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 730px) {
+    .Header__content {
+        margin: 0 14px;
+        width: auto;
+    }
+    
+    .Header__allPage {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 520px;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__allPage_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__button {
+        width: 44px;
+        height: 44px;
+        margin: 15px 0 15px auto;
+        visibility: visible;
+    }
+
+    .Header__closeButton {
+        visibility: visible;
+        margin: 22px 22px 2px auto;
+    }
+}
+
+@media screen and (min-width: 420px) and (max-width: 570px){
+    .Header__content {
+        width: auto;
+        margin: 0 50px;
+    }
+
+    .Header__regLink {
+        margin: 29px 14px 29px auto;
+        font-size: 10px;
+    }
+
+    .Header__logLink {
+        width: 52px;
+        height: 20px;
+        margin: 25px 0 0;
+        padding-top: 2px;
+        padding-bottom: 0;
+        font-size: 10px;
+    }
+
+    .Header__allPage {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 100%;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__allPage_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__closeButton {
+        visibility: visible;
+        margin: 14px 14px 2px auto;
+    }
+
+    .Header__button {
+        width: 30px;
+        height: 43px;
+        margin: 15px 0 16px auto;
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .Header__content {
+        width: 284px;
+    }
+
+    .Header__regLink {
+        margin: 29px 14px 29px auto;
+        font-size: 10px;
+    }
+
+    .Header__logLink {
+        width: 52px;
+        height: 20px;
+        margin: 25px 0 0;
+        padding-top: 2px;
+        padding-bottom: 0;
+        font-size: 10px;
+    }
+
+    .Header__allPage {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;    
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        width: 100%;
+        min-width: none;
+        height: 100vh;
+    }
+
+    .Header__allPage_visibility_enable {
+        visibility: visible;
+    }
+
+    .Header__closeButton {
+        visibility: visible;
+        margin: 14px 14px 2px auto;
+    }
+
+    .Header__button {
+        width: 30px;
+        height: 43px;
+        margin: 15px 0 16px auto;
+        visibility: visible;
+    }
+}

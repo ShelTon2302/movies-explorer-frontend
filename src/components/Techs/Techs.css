@@ -1,0 +1,340 @@
+.Techs {
+    width: 100%;
+    margin: 0 auto;
+    background: #272727;
+}
+
+.Techs__content {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.Techs__title {
+    padding-top: 100px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #DADADA;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.Techs__titleText {
+    margin: 90px auto 26px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.04em;  
+    color: #FFFFFF;    
+}
+
+.Techs__text {
+    width: 460px;
+    margin: 0 auto 100px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.Techs__list {
+    width: 690px;
+    color: #FFF;
+    margin: 0 auto;
+    padding: 0 0 100px;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.Techs__listItem {
+    margin: 0 10px 0 0;
+    padding-top: 21px;
+    width: 90px;
+    height: 39px;
+    background: #303030;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+
+.Techs__listItem:last-child {
+    margin: 0;
+}
+
+@media screen and (min-width: 990px) and (max-width: 1180px){
+    .Techs__content {
+        width: auto;
+        margin: 0 20px;
+    }
+    
+    .Techs__title {
+        padding-top: 100px;
+        padding-bottom: 23px;
+        border-bottom: 1px solid #DADADA;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+    }
+    
+    .Techs__titleText {
+        margin: 90px auto 26px;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 58px;
+        text-align: center;
+        letter-spacing: -0.04em;  
+        color: #FFFFFF;    
+    }
+    
+    .Techs__text {
+        width: 460px;
+        margin: 0 auto 100px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+    }
+    
+    .Techs__list {
+        width: 690px;
+        color: #FFF;
+        margin: 0 auto;
+        padding: 0 0 100px;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+    }
+    
+    .Techs__listItem {
+        margin: 0 10px 0 0;
+        padding-top: 21px;
+        width: 90px;
+        height: 39px;
+        background: #303030;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: -0.04em;
+    }
+    
+    .Techs__listItem:last-child {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .Techs__content {
+        margin: 0 70px;
+        width: auto;
+    }
+
+    .Techs__title {
+        padding-top: 90px;
+    }
+    
+    .Techs__titleText {
+        margin: 80px auto 22px;
+    }
+
+    .Techs__text {
+        width: 400px;
+        margin: 0 auto 83px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .Techs__list {
+        width: 648px;
+        margin: 0 auto;
+        padding: 0 0 90px;
+
+    }
+        
+    .Techs__listItem {
+        width: 84px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (min-width: 730px) and (max-width: 840px){
+    .Techs__content {
+        width: 668px;
+    }
+
+    .Techs__title {
+        padding-top: 90px;
+    }
+    
+    .Techs__titleText {
+        margin: 80px auto 22px;
+    }
+
+    .Techs__text {
+        width: 400px;
+        margin: 0 auto 83px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .Techs__list {
+        width: 648px;
+        margin: 0 auto;
+        padding: 0 0 90px;
+
+    }
+        
+    .Techs__listItem {
+        width: 84px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 730px) {
+    .Techs__content {
+        margin: 0 10px;
+        width: auto;
+    }
+
+    .Techs__title {
+        padding-top: 90px;
+    }
+    
+    .Techs__titleText {
+        margin: 80px auto 22px;
+    }
+
+    .Techs__text {
+        width: 400px;
+        margin: 0 auto 83px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .Techs__list {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 0 90px;
+
+    }
+        
+    .Techs__listItem {
+        width: 84px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (min-width: 420px) and (max-width: 570px) {
+    .Techs {
+        background-color: #202020;
+    }
+
+    .Techs__content {
+        margin: 0 60px;
+        width: auto;
+    }
+
+    .Techs__title {
+        padding-top: 48px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .Techs__titleText {
+        margin: 65px auto 20px;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .Techs__text {
+        margin: 0 auto 53px;
+        width: 100%;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .Techs__list {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 84px);
+        grid-template-rows: repeat(3, 57px);
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    
+    .Techs__listItem {
+        width: 84px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Techs__listItem:last-child {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+}
+
+
+@media screen and (max-width: 420px){
+    .Techs {
+        background-color: #202020;
+    }
+
+    .Techs__content {
+        width: 284px;
+    }
+
+    .Techs__title {
+        padding-top: 48px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .Techs__titleText {
+        margin: 65px auto 20px;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .Techs__text {
+        margin: 0 auto 53px;
+        width: 100%;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .Techs__list {
+        width: auto;
+        margin: 0 53px;
+        display: grid;
+        grid-template-columns: repeat(2, 84px);
+        grid-template-rows: repeat(4, 57px);
+        gap: 10px;
+    }
+    
+    
+    .Techs__listItem {
+        width: 84px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

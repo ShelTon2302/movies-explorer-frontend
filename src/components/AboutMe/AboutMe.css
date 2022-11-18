@@ -1,0 +1,387 @@
+.AboutMe {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.AboutMe__title {
+    margin: 0;
+    padding-top: 110px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #DADADA;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.AboutMe__grid {
+    width: 100%;
+    margin: 66px auto 0;
+    display: grid;
+    grid-template-columns: 600px 500px;
+    gap: 0 40px;
+
+}
+
+.AboutMe__name{
+    font-weight: 400;
+    margin: 0 auto 18px 0;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+.AboutMe__prof {
+    margin: 0 auto 26px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+}
+
+.AboutMe__text {
+    margin: 0;
+    padding-bottom: 99px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+}
+
+.AboutMe__link {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.AboutMe__foto {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    margin: 0 0 auto auto;
+}
+
+@media screen and (min-width: 990px) and (max-width: 1180px){
+    .AboutMe {
+        width: auto;
+        margin: 0 20px;
+    }
+    
+    .AboutMe__title {
+        margin: 0;
+        padding-top: 110px;
+        padding-bottom: 23px;
+        border-bottom: 1px solid #DADADA;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+    }
+    
+    .AboutMe__grid {
+        width: 100%;
+        margin: 66px auto 0;
+        display: grid;
+        grid-template-columns: 55% 40%;
+        gap: 0 40px;
+    
+    }
+    
+    .AboutMe__name{
+        font-weight: 400;
+        margin: 0 auto 18px 0;
+        font-size: 50px;
+        line-height: 58px;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 26px 0;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        padding-bottom: 99px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+    }
+    
+    .AboutMe__link {
+        margin: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+    
+    .AboutMe__foto {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        margin: 0 0 auto auto;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .AboutMe {
+        margin: 0 70px;
+        width: auto;
+    }
+
+    .AboutMe__title {
+        padding-top: 88px;
+        padding-bottom: 22px;
+    }
+    
+    .AboutMe__grid {
+        margin: 65px auto 0;
+        grid-template-columns: 54% 38%;
+        gap: 0 49px;
+    
+    }
+    
+    .AboutMe__name{
+        margin: 0 auto 15px 0;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 20px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        width: 100%;
+        padding-bottom: 30;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__foto {
+        margin: 0 0 auto auto;
+        width: 100%;
+    }
+
+    .AboutMe__link {
+        margin-top: -11px;
+    }
+
+}
+
+@media screen and (min-width: 730px) and (max-width: 840px){
+    .AboutMe {
+        width: 668px;
+    }
+
+    .AboutMe__title {
+        padding-top: 88px;
+        padding-bottom: 22px;
+    }
+    
+    .AboutMe__grid {
+        margin: 65px auto 0;
+        grid-template-columns: 364px 255px;
+        gap: 0 49px;
+    
+    }
+    
+    .AboutMe__name{
+        margin: 0 auto 15px 0;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 20px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        width: 364px;
+        padding-bottom: 30;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__foto {
+        margin: 0 0 auto auto;
+        width: 255px;
+        height: 307px;
+    }
+
+    .AboutMe__link {
+        margin-top: -11px;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 730px) {
+    .AboutMe {
+        margin: 0 10px;
+        width: auto;
+    }
+
+    .AboutMe__title {
+        padding-top: 88px;
+        padding-bottom: 22px;
+    }
+    
+    .AboutMe__grid {
+        margin: 65px auto 0;
+        grid-template-columns: 54% 38%;
+        gap: 0 49px;
+    
+    }
+    
+    .AboutMe__name{
+        margin: 0 auto 15px 0;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 20px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        width: 100%;
+        padding-bottom: 30;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .AboutMe__foto {
+        margin: 0 0 auto auto;
+        width: 100%;
+    }
+
+    .AboutMe__link {
+        margin-top: -11px;
+    }
+}
+
+@media screen and (min-width: 420px) and (max-width: 570px) {
+    .AboutMe {
+        margin: 0 60px;
+        width: auto;
+    }
+
+    .AboutMe__title {
+        padding-top: 40px;
+        padding-bottom: 26px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .AboutMe__grid {
+        margin: 60px auto 0;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .AboutMe__name{
+        margin: 40px auto 20px 0;
+        font-size: 30px;
+        line-height: 36px;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 20px 0;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        width: 100%;
+        padding-bottom: 51px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .AboutMe__foto {
+        margin: 0;
+        width: 100%;
+    }
+
+    .AboutMe__link {
+        margin-top: -11px;
+    }
+}
+
+
+@media screen and (max-width: 420px){
+    .AboutMe {
+        width: 292px;
+    }
+
+    .AboutMe__title {
+        padding-top: 40px;
+        padding-bottom: 26px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .AboutMe__grid {
+        margin: 60px auto 0;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .AboutMe__name{
+        margin: 40px auto 20px 0;
+        font-size: 30px;
+        line-height: 36px;
+    }
+    
+    .AboutMe__prof {
+        margin: 0 auto 20px 0;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .AboutMe__text {
+        margin: 0;
+        width: 100%;
+        padding-bottom: 51px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .AboutMe__foto {
+        margin: 0;
+        width: 292px;
+        height: 352px;
+    }
+
+    .AboutMe__link {
+        margin-top: -11px;
+    }
+}
