@@ -8,11 +8,13 @@ import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 
 
-function Main() {
+function Main(props) {
+    console.log(props.loggedIn);
     return (
         <>
             <Header
-                isAbout='true'   
+                isAbout='true'
+                loggedIn={props.loggedIn}   
             />
             <main className='Main'>
                 <Promo />

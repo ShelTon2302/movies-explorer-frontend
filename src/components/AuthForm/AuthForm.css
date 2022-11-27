@@ -1,8 +1,8 @@
 .AuthForm {
-    margin: 0 auto 70px;
+    margin: 0 auto;
     padding-top: 70px;
     width: 396px;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
 }
 
 .AuthForm__logo {
@@ -46,7 +46,27 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
     color: #FFFFFF;
+}
+
+.AuthForm__input-error {
+    width: 100%;
+    margin-top: -20px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    visibility: visible;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
 }
 
 .AuthForm__submit {
@@ -65,10 +85,21 @@
     color: #FFFFFF;
 }
 
+.AuthForm__submit:disabled {
+    background-color: #7b7c7e;
+    transition: background 1s ease-out;
+}
+
 .AuthForm__submit:hover {
     background-color: #0e65f0;
     transition: background 1s ease-out;
 }
+
+.AuthForm__submit:disabled:hover {
+    background-color: #7b7c7e;
+    transition: background 1s ease-out;
+}
+
 
 .AuthForm__textArea {
     width: 100%;

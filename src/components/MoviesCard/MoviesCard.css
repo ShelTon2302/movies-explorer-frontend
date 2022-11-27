@@ -55,6 +55,10 @@
     background: url(../../images/moviescard_like.svg)
 }
 
+.MovieCard__like:hover {
+    cursor: pointer;
+}
+
 .MovieCard__like_active {
     background: url(../../images/moviescard_like_active.svg)
 }
@@ -68,6 +72,10 @@
     background: url(../../images/moviescard_delete.svg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
+}
+
+.MovieCard__delete:hover {
+    cursor: pointer;
 }
 
 .MoviesCard__thumbnail {

@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom';
-import './NotFound.css'
+import './NotFound.css';
 
-function NotFound() {
+function NotFound({history}) {
+    function goBack() {
+        history.goBack();
+    }
+
     return (
         <div className="NotFound">
             <h2 className="NotFound__title">404</h2>
             <p className="NotFound__description">Страница не найдена</p>
-            <Link className="NotFound__link" to='/'>Назад</Link>
+            <button type='button' className="NotFound__button" onClick={goBack}>Назад</button>
         </div>
     );
 };

@@ -19,7 +19,7 @@ function Header(props) {
     <header className={`Header${props.isAbout ? ' Header_backgroud_blue' : ''}`}>
       <div className="Header__content">
         <Link className="Header__link" to="/"><img className="Header__logo" src={logo} alt="logo"></img></Link>
-        {props.isAbout 
+        {(props.isAbout && !props.loggedIn) 
           ? 
             <div className="Header__about">
               {/*<img className="Header__logo" src={logo} alt="logo"></img>*/}
