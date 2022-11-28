@@ -4,7 +4,6 @@ class Api {
         this._UrlLogin = `${baseUrl}/signin`;
         this._UrlLogout = `${baseUrl}/signout`;
         this._UrlProfile = `${baseUrl}/users/me`;
-        this._UrlAvatar = `${baseUrl}/users/me/avatar`;
         this._UrlMovies = `${baseUrl}/movies`;
         this._headers = headers;
     }
@@ -124,7 +123,7 @@ class Api {
 const api = new Api ({
     baseUrl: 'https://api.project-mesto.nomoredomains.icu',
     headers: {
-        'Accept': 'application/json',
+        //'Accept': 'application/json',
         'Content-Type': 'application/json'
         },
     });
