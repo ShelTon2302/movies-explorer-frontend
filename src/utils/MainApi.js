@@ -121,9 +121,9 @@ class Api {
 }
 
 const api = new Api ({
-    baseUrl: 'https://api.project-mesto.nomoredomains.icu',
+    baseUrl: 'https://api.project-movies.nomoredomains.icu',
     headers: {
-        //'Accept': 'application/json',
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
         },
     });
