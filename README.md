@@ -17,4 +17,6 @@
 
 # проект figma: https://disk.yandex.ru/d/z0u0Fuy_Y1homA
 # github: https://github.com/ShelTon2302/movies-explorer-frontend
+# puii-request:https://github.com/ShelTon2302/movies-explorer-frontend/pull/3
+# адрес Front`а:https://project-movies.nomoredomains.icu/
 
