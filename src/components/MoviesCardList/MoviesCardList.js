@@ -50,22 +50,25 @@ function MoviesCardList(props) {
     return (
         <section className="MoviesCardList">
             {
-                hiddenMoreButton
+                props.isMovies
                     ?
-                        props.movies.map(item => <MoviesCard 
-                            item={item}
-                            isSaved={props.isSaved}
-                            savedMovies={props.savedMovies}
-                            handleSetSavedMovies={props.handleSetSavedMovies}
-                        />)
-                :
-                        pathOfMovies.map(item => <MoviesCard 
-                            item={item}
-                            isSaved={props.isSaved}
-                            savedMovies={props.savedMovies}
-                            handleSetSavedMovies={props.handleSetSavedMovies}
-                        />)
-
+                        hiddenMoreButton
+                            ?
+                                props.movies.map(item => <MoviesCard 
+                                    item={item}
+                                    isSaved={props.isSaved}
+                                    savedMovies={props.savedMovies}
+                                    handleSetSavedMovies={props.handleSetSavedMovies}
+                                />)
+                        :
+                                pathOfMovies.map(item => <MoviesCard 
+                                    item={item}
+                                    isSaved={props.isSaved}
+                                    savedMovies={props.savedMovies}
+                                    handleSetSavedMovies={props.handleSetSavedMovies}
+                                />)
+                    :
+                        <p className='SavedMovies__text'>{props.textMessage}</p>
             }
             <button 
                 type="button" 

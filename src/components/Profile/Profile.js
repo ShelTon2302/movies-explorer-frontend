@@ -38,13 +38,14 @@ function Profile(props) {
     function isExit () {
         api.logout()
             .then(() => {
-                console.log(`1`);
-
                 props.handleChangeLoggedIn(false);
+                localStorage.removeItem('findedMovies');
+                localStorage.removeItem('findedMoviesShot');
+                localStorage.removeItem('checkbox');
+                localStorage.removeItem('textReq');
+            
             })
             .then(() => {
-                console.log(`2`);
-
                 props.history.push('/');        
             })
             .catch((err) => {

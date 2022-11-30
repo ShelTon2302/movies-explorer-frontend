@@ -10,7 +10,6 @@ import Profile from '../Profile/Profile';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import api from '../../utils/MainApi';
-import { getMovies } from '../../utils/MoviesApi';
 import ProtectedRoute from '../../utils/ProtectedRoute';
 
 function App() {
@@ -19,22 +18,15 @@ function App() {
     email: 'pochta@yandex.ru',
     _id: ''
   });
-  const [allMovies, setAllMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
+  const [savedMoviesShot, setSavedMoviesShot] = React.useState([]);
+  const [regInfo, setRegInfo] = React.useState({});
   const [authStatus, setAuthStatus] = React.useState({});
   const [loginUser, setLoginUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false)
   const history = useHistory();
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = React.useState(false);
   const [numberOfItem, setNumberOfItem] = React.useState(7); //количество показываемых карточек
-
-  const [textReqMovies, setTextReqMovies] = React.useState(''); //Запоминает текст запроса на странице Movies
-  const [shotMoviesState, setShotMoviesState] = React.useState(false); //Запоминает положение чекбокса Короткометражки на странице Movies
-  const [findedMovies, setFindedMovies] = React.useState([]); //Запоминает массив найденных фильмов на странице Movies
-
-  const [textReqSavedMovies, setTextReqSavedMovies] = React.useState(''); //Запоминает текст запроса на странице SavedMovies
-  const [shotSavedMoviesState, setShotSavedMoviesState] = React.useState(false); //Запоминает положение чекбокса Короткометражки на странице SavedMovies
-  const [findedSavedMovies, setFindedSavedMovies] = React.useState([]); //Запоминает массив найденных фильмов на странице SavedMovies
 
   React.useEffect(() => {
     // Получение данных пользователя
@@ -52,31 +44,32 @@ function App() {
       })
       .catch(() => {
         setLoggedIn(false);
+        localStorage.removeItem('findedMovies');
+        localStorage.removeItem('findedMoviesShot');
+        localStorage.removeItem('checkbox');
+        localStorage.removeItem('textReq');
         history.push('/');
       });
-    
-    // Запрос списка фильмов с сервера BeatFilm
-    getMovies()
-      .then((res) => {
-        setAllMovies(res);
-      })
-      .catch((err) => {
-          console.log(err);
-      });
-    
+      
     // Получение списка сохраненных фильмов пользователя
     api.getSavedMovies()
     .then((res) => {
       if (res) {
-        console.log(res);
         setSavedMovies(res.movies);
+        // localStorage.setItem('savedMovies', JSON.stringify(res.movies));
+        setSavedMoviesShot(res.movies.filter(function (item) {
+          return (
+              item.duration <= 40 
+          );
+      }));
       }
     })
     .catch((err) => {
       console.log(err);
-    });  
+    });
+    
+    setRegInfo(JSON.parse(localStorage.getItem('regInfo')));
 
-    console.log('useEffect');
   },[loginUser]);
 
   function handleChangeAuthStatus(data) {
@@ -142,15 +135,9 @@ function App() {
             component={Movies}
             loggedIn={loggedIn}
             history={history}
-            allMovies={allMovies}
             savedMovies={savedMovies}
+            regInfo={regInfo}
             handleSetSavedMovies={setSavedMovies}
-            textReq={textReqMovies}
-            setTextReq={setTextReqMovies}
-            shotState={shotMoviesState}
-            setShotState={setShotMoviesState}
-            finded={findedMovies}
-            setFinded={setFindedMovies}
             numberOfItem={numberOfItem}
             setNumberOfItem={setNumberOfItem}
           />
@@ -161,12 +148,8 @@ function App() {
             history={history}
             savedMovies={savedMovies}
             handleSetSavedMovies={setSavedMovies}
-            textReq={textReqSavedMovies}
-            setTextReq={setTextReqSavedMovies}
-            shotState={shotSavedMoviesState}
-            setShotState={setShotSavedMoviesState}
-            finded={findedSavedMovies}
-            setFinded={setFindedSavedMovies}
+            savedMoviesShot={savedMoviesShot}
+            handleSetSavedMoviesShot={setSavedMoviesShot}
             numberOfItem={numberOfItem}
             setNumberOfItem={setNumberOfItem}
           />

@@ -1,7 +1,6 @@
 import React from 'react';
 import './SavedMovies.css';
 import Header from '../Header/Header';
-import Preloader from '../Preloader/Preloader';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import Footer from '../Footer/Footer';
@@ -12,43 +11,45 @@ function SavedMovies(props) {
     const validForm = useFormWithValidation();
     const [loadingMovies, setLoadingMovies] = React.useState(false);
     const [textMessage, setTextMessage] =React.useState('Здесь пока ничего нет!');
-    const [savedMoviesFind, setSavedMoviesFind] = React.useState([]);
+    const [textMessageShot, setTextMessageShot] =React.useState('Здесь пока ничего нет!');
+    const [isMovies, setIsMovies] = React.useState(false);
+    const [isMoviesShot, setIsMoviesShot] = React.useState(false);
+    const [checkboxState, setCheckboxState] = React.useState(false);
+    const [moviesFind, setMoviesFind] = React.useState([]);
+    const [moviesFindShot, setMoviesFindShot] = React.useState([]);
+    const [textReq, setTextReq] = React.useState('');
 
+    console.log(textReq)
     React.useEffect(() => {
-        if (props.finded.length > 0) {
-            setSavedMoviesFind(props.finded);
-        } else {
-            setSavedMoviesFind(props.savedMovies);
+        if (props.savedMovies.length > 0) {
+            setIsMovies(true);
+            setMoviesFind(props.savedMovies);
+            setIsMovies(true);
+        }
+
+        if (props.savedMoviesShot.length > 0) {
+            setIsMoviesShot(true);
+            setMoviesFindShot(props.savedMoviesShot);
+            setIsMoviesShot(true);
         }
     }, []);
 
-    function handleSetFindedMovies (data) {
-        props.setFinded(data);
-    }
-    
-    function handleSetTextReq (data) {
-        props.setTextReq(data);
-    }
-
     function handleFindMoviesSubmit (e) {
         e.preventDefault();
-        setLoadingMovies(true);
-        if (props.savedMovies.length > 0) { 
-            let find = FindMovies(props.savedMovies, props.shotState, validForm.values.Search)
-            setLoadingMovies(false);
-            if (find.length === 0) {
-                setTextMessage('Ничего не найдено');
-            } else {
-                setSavedMoviesFind(find);
-                handleSetFindedMovies(find);
-                handleSetTextReq(validForm.values.Search);
-            }
-        } else {
-                setTextMessage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
-                setLoadingMovies(false);
-        }
-
+        setTextReq(validForm.values.Searc)
+        FindMovies(
+            props.savedMovies, 
+            validForm.values.Search, 
+            setMoviesFind, 
+            setMoviesFindShot, 
+            setTextMessage, 
+            setTextMessageShot,
+            setIsMovies,
+            setIsMoviesShot);
+        console.log(textReq);
+        
     }
+    console.log(textReq);
 
     return (
         <div className="SavedMovies">
@@ -60,28 +61,21 @@ function SavedMovies(props) {
                 textReqErr={validForm.errors.Search}
                 setTextReq={validForm.handleChange}
                 textReqSaved={props.textReq}
-                checkboxStatus={props.shotState}
-                setCheckboxStatus={props.setShotState}
+                checkboxStatus={checkboxState}
+                setCheckboxStatus={setCheckboxState}
                 onSubmit={handleFindMoviesSubmit}
                 isValid={validForm.isValid}
             />
-            {loadingMovies 
-                ? 
-                    <Preloader /> 
-                :
-                    (props.savedMovies.length > 0)
-                        ?
-                            <MoviesCardList 
-                                movies={savedMoviesFind}
-                                isSaved={true}
-                                savedMovies={props.savedMovies}
-                                handleSetSavedMovies={props.handleSetSavedMovies}
-                                numberOfItem={props.numberOfItem}
-                                moreButtonEnable={true}
-                            />
-                        :
-                            <p className='SavedMovies__text'>{textMessage}</p>
-            }
+            <MoviesCardList
+                isMovies={checkboxState ? isMoviesShot : isMovies}
+                textMessage={checkboxState ? textMessageShot : textMessage}
+                movies={checkboxState ? moviesFindShot : moviesFind}
+                isSaved={true}
+                savedMovies={props.savedMovies}
+                handleSetSavedMovies={props.handleSetSavedMovies}
+                numberOfItem={props.numberOfItem}
+                moreButtonEnable={true}
+            />
             <Footer />
         </div>
     )
