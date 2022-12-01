@@ -3,6 +3,7 @@ import logo from '../../images/header_logo.svg';
 import { Link } from 'react-router-dom';
 
 function AuthForm(props) {
+    
     return (
         <section className="AuthForm">
             <Link  to="/"><img className="AuthForm__logo" src={logo} alt='logo' /></Link>
@@ -17,7 +18,8 @@ function AuthForm(props) {
                         className='AuthForm__input AuthForm__input_email'
                         name='auth_email'
                         value={props.email}
-                        onChange={props.handleChangeEmail}      
+                        onChange={props.handleChangeEmail}
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         required 
                     />
                     <span className="AuthForm__input-error">{props.emailErr}</span>

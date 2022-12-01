@@ -15,12 +15,6 @@ function Login(props) {
             if (res) {
                 props.handleChangeLoggedIn(true);
                 props.handleChangeLogginUser();
-                /*props.setCurrentUser({
-                    name: res.name,
-                    email: res.email,
-                    _id: res._id,
-                });*/
-                props.history.push('/movies');
             } else {
                 props.handleChangeAuthStatus({
                 msg: 'Что-то пошло не так! Попробуйте ещё раз.',
@@ -30,7 +24,10 @@ function Login(props) {
             }
             })
             .catch((err) => console.log(err))
-            .finally(validForm.resetForm);
+            .finally(() => {
+                validForm.resetForm();
+                props.history.push('/movies');
+            });
     }
 
     return (

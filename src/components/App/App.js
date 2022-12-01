@@ -39,15 +39,11 @@ function App() {
             email: res.email,
             _id: res._id
           });
-          history.push('/movies');
         }
       })
       .catch(() => {
         setLoggedIn(false);
-        localStorage.removeItem('findedMovies');
-        localStorage.removeItem('findedMoviesShot');
-        localStorage.removeItem('checkbox');
-        localStorage.removeItem('textReq');
+        localStorage.removeItem('regInfo');
         history.push('/');
       });
       

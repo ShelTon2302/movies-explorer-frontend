@@ -1,48 +1,46 @@
 import './MoviesCardList.css';
 import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import { NUMBER_OF_ITEMS, NUMBER_OF_ITEMS_MOB, WIDTH_OF_MOB } from '../../const/const'
 
 function MoviesCardList(props) {
     const [hiddenMoreButton, setHiddenMoreButton] = React.useState(true);
     const [endNum, setEndNum] = React.useState(0);
     const [pathOfMovies, setPathOfMovies] = React.useState([]);
-    const [numberOfItem, setNumberOfItem] = React.useState(7);
+    const [numberOfCard, setNumberOfCard] = React.useState(NUMBER_OF_ITEMS);
 
     React.useEffect(() => {
-        if (props.movies.length > numberOfItem && !props.isSaved)
+        if (props.movies.length > numberOfCard && !props.isSaved)
         {
             setHiddenMoreButton(false);
-            setEndNum(endNum + numberOfItem);
-            setPathOfMovies(props.movies.slice(0, numberOfItem));
+            setEndNum(endNum + numberOfCard);
+            setPathOfMovies(props.movies.slice(0, numberOfCard));
         }
 
         window.addEventListener('resize', handleResizeWindow);
 
-        return () => {
-            window.addEventListener('resize', handleResizeWindow);
-        }
     }, [props.begin]);
 
 
     function pressMoreButton () {
-        setEndNum(endNum + numberOfItem);
+        setEndNum(endNum + numberOfCard);
         if (endNum < props.movies.length) {
             setPathOfMovies(props.movies.slice(0, endNum));
         } else {
             setHiddenMoreButton(true);
             setEndNum(0);
             setPathOfMovies([]);
-
         }        
     }
 
 
     function handleResizeWindow(event) {
-        if (event.target.window.innerWidth < 420) {
-            setNumberOfItem(5);
+        if (event.target.window.innerWidth < WIDTH_OF_MOB) {
+            setNumberOfCard(NUMBER_OF_ITEMS_MOB);
         } else {
-            setNumberOfItem(7);
+            setNumberOfCard(NUMBER_OF_ITEMS);
         }
+        window.removeEventListener('resize', handleResizeWindow);
       }
       
 

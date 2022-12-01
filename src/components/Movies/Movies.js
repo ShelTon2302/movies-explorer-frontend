@@ -11,14 +11,15 @@ import { getMovies } from '../../utils/MoviesApi';
 
 function Movies(props) {
     const validForm = useFormWithValidation();
+    const [errorText, setErrorText] = React.useState('');
+    const [enableForm, setEnableForm] = React.useState(true);
     const [loadingMovies, setLoadingMovies] = React.useState(false);
-    const [regInfo, setRegInfo] = React.useState({});
     const [textMessage, setTextMessage] =React.useState('Здесь пока ничего нет!');
     const [textMessageShot, setTextMessageShot] =React.useState('Здесь пока ничего нет!');
     const [isMovies, setIsMovies] = React.useState(false);
     const [isMoviesShot, setIsMoviesShot] = React.useState(false);
     const [allMovies, setAllMovies] = React.useState([]);
-    const [textReg, setTextReg] = React.useState(props.regInfo.textReg);
+    const [textReg, setTextReg] = React.useState(props.regInfo ? props.regInfo.textReg : '');
     const [checkboxState, setCheckboxState] = React.useState(false);
     const [moviesFind, setMoviesFind] = React.useState([]);
     const [moviesFindShot, setMoviesFindShot] = React.useState([]);
@@ -26,19 +27,15 @@ function Movies(props) {
     const [begin, setBegin] = React.useState({}) 
     
     React.useEffect(() => {
-        setRegInfo(JSON.parse(localStorage.getItem('regInfo')));
-        console.log(regInfo, props.regInfo);
+        setBegin({});
+
         if (localStorage.getItem('allMovies')) {
             setAllMovies(JSON.parse(localStorage.getItem('allMovies')));
         }
          if (props.regInfo) {
             if (props.regInfo.moviesFind.length > 0) {
-                handleSetMoviesFind(props.regInfo.moviesFind);
+                setMoviesFind(props.regInfo.moviesFind);
                 setIsMovies(true);
-            }
-            if (props.regInfo.moviesFindShot.length > 0) {
-                setMoviesFindShot(props.regInfo.moviesFindShot);
-                setIsMoviesShot(true);
             }
             setCheckboxState(props.regInfo.checkboxState);
             setTextReg(props.regInfo.textReg);
@@ -46,22 +43,23 @@ function Movies(props) {
         console.log('useEffect')
     }, []);
 
-    function handleSetMoviesFind (data) {
-        console.log(data)
-        setMoviesFind(data);
-        console.log(moviesFind)
-    }
-
-    function handleSetMoviesFindShot (data) {
-        setMoviesFindShot(data);
-    }
-
-
-
+    React.useEffect(() => {
+        if (validForm.values.Search) {
+            setErrorText('');
+        }
+    }, [validForm.values.Search])
 
     function handleFindMoviesSubmit (e) {
         e.preventDefault();
-        setTextReg(validForm.values.Search);
+        if (!validForm.values.Search && !textReg) {
+            setErrorText('Нужно ввести ключевое слово');
+            return;
+        };
+        if (validForm.values.Search) {
+            setTextReg(validForm.values.Search);
+        };
+        setEnableForm(false);
+        console.log(textReg)
 
         if (localStorage.getItem('allMovies') === null) {
             setLoadingMovies(true);
@@ -70,9 +68,9 @@ function Movies(props) {
                     localStorage.setItem('allMovies', JSON.stringify(res));
                     FindMovies(
                         res, 
-                        validForm.values.Search, 
-                        handleSetMoviesFind, 
-                        handleSetMoviesFindShot, 
+                        validForm.values.Search ? validForm.values.Search : textReg,
+                        setMoviesFind, 
+                        setMoviesFindShot, 
                         setTextMessage, 
                         setTextMessageShot,
                         setIsMovies,
@@ -81,6 +79,7 @@ function Movies(props) {
                 .then((res) => {
                     setAllMovies(res);
                     setLoadingMovies(false);
+                    setBegin({});
                 })
                 .catch(() => {
                     setTextMessage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
@@ -93,29 +92,23 @@ function Movies(props) {
         }  else {
             FindMovies(
                 allMovies, 
-                validForm.values.Search,
-                handleSetMoviesFind, 
-                handleSetMoviesFindShot, 
+                validForm.values.Search ? validForm.values.Search : textReg,
+                setMoviesFind, 
+                setMoviesFindShot, 
                 setTextMessage, 
                 setTextMessageShot,
                 setIsMovies,
                 setIsMoviesShot
             );
-        } 
-        console.log(moviesFind)
-        
-        localStorage.setItem('findedMovies', JSON.stringify(moviesFind));
-        localStorage.setItem('findedMoviesShot', JSON.stringify(moviesFindShot));
-        localStorage.setItem('checkbox', JSON.stringify(checkboxState));
-        localStorage.setItem('textReg', textReg);
+            setBegin({});
+        };        
         localStorage.setItem('regInfo', JSON.stringify({
             moviesFind,
             moviesFindShot,
             checkboxState,
             textReg
         }));
-        console.log(moviesFind, textReg, checkboxState, JSON.parse(localStorage.getItem('findedMovies')));
-        
+        setEnableForm(true);    
     }
 
     return (
@@ -125,13 +118,14 @@ function Movies(props) {
                 loadingMovies={loadingMovies}
                 setLoadingMovies={setLoadingMovies}
                 textReq={validForm.values.Search}
-                textReqErr={validForm.errors.Search}
+                textReqErr={errorText}
                 setTextReq={validForm.handleChange}
                 textReqSaved={textReg}
                 checkboxStatus={checkboxState}
                 setCheckboxStatus={setCheckboxState}
                 onSubmit={handleFindMoviesSubmit}
                 isValid={validForm.isValid}
+                enableForm={enableForm}
             />
             {loadingMovies 
                 ? 

@@ -11,10 +11,38 @@ import { useFormWithValidation } from '../../utils/Validation';
 function Profile(props) {
     const currentUser = React.useContext(CurrentUserContext);
     const validForm = useFormWithValidation();
+    const [disableSubmit, setDisableSubmit] = React.useState(false);
+    const [disableForm, setDisableForm] = React.useState(false);
+
+
+    React.useEffect(() => {
+        if (
+            // введенный email совпадает с сохраненным или не менялся
+            (validForm.values.profile_email === currentUser.email || !validForm.values.profile_email)
+                &&
+            // введенное имя совпадает с сохраненным или не менялось
+            (validForm.values.profile_name === currentUser.name || !validForm.values.profile_name)
+        ) {
+            console.log('true')
+            setDisableSubmit(true);
+        } else {
+            console.log('false')
+            setDisableSubmit(false);
+ 
+        }
+
+        console.log('error', disableSubmit);
+
+    }, [validForm.handleChange])
+
 
     function handleSubmit (e) {
         e.preventDefault();
-        api.setProfileInfo(validForm.values.profile_email, validForm.values.profile_name)
+        setDisableForm(true);
+        api.setProfileInfo(
+            validForm.values.profile_email ? validForm.values.profile_email : currentUser.email, 
+            validForm.values.profile_name ? validForm.values.profile_name : currentUser.name, 
+        )
         .then ((res) => {
             if(res){
                 props.setCurrentUser({
@@ -22,7 +50,13 @@ function Profile(props) {
                     email: res.email,
                     _id: res._id,
                 });
-                props.history.goBack();
+                props.handleChangeAuthStatus({
+                    msg: 'Информация пользователя изменена!',
+                    error: false
+                });
+                props.handleTooltipClick();
+
+                //props.history.goBack();
             } else {
                 props.handleChangeAuthStatus({
                     msg: 'Что-то пошло не так! Попробуйте ещё раз.',
@@ -39,16 +73,17 @@ function Profile(props) {
         api.logout()
             .then(() => {
                 props.handleChangeLoggedIn(false);
-                localStorage.removeItem('findedMovies');
-                localStorage.removeItem('findedMoviesShot');
-                localStorage.removeItem('checkbox');
-                localStorage.removeItem('textReq');
-            
+                localStorage.removeItem('regInfo');
             })
             .then(() => {
                 props.history.push('/');        
             })
             .catch((err) => {
+                props.handleChangeAuthStatus({
+                    msg: 'Выход пользователя не выполнен!',
+                    error: true
+                });
+                props.handleTooltipClick();
                 console.log(`Выход пользователя не выполнен: ${err}`);
             });
     }
@@ -71,6 +106,7 @@ function Profile(props) {
                             value={validForm.values.profile_name}
                             onChange={validForm.handleChange}      
                             required 
+                            disabled={disableForm}
                         />
                         <span className="Profile__input-error">{validForm.errors.profile_name}</span>
                     </div>
@@ -81,8 +117,10 @@ function Profile(props) {
                             defaultValue={currentUser.email} 
                             className="Profile__input"
                             name='profile_email'
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                             value={validForm.values.profile_email}
-                            onChange={validForm.handleChange}      
+                            onChange={validForm.handleChange} 
+                            disabled={disableForm}     
                             required 
                         />
                         <span className="Profile__input-error">{validForm.errors.profile_email}</span>
@@ -91,7 +129,7 @@ function Profile(props) {
                         className="Profile_button" 
                         type="submit" 
                         aria-label="Редактировать"
-                        disabled={!validForm.isValid}
+                        disabled={!validForm.isValid || disableSubmit || disableForm}
                     >Редактировать</button>
                 </form>
                 <button className="Profile_button Profile_button_color_red" type="submit" aria-label="Выйти из аккаунта" onClick={isExit}>Выйти из аккаунта</button>

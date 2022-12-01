@@ -9,6 +9,8 @@ import FindMovies from '../../utils/FindMovies';
 
 function SavedMovies(props) {
     const validForm = useFormWithValidation();
+    const [errorText, setErrorText] = React.useState('');
+    const [enableForm, setEnableForm] = React.useState(true);
     const [loadingMovies, setLoadingMovies] = React.useState(false);
     const [textMessage, setTextMessage] =React.useState('Здесь пока ничего нет!');
     const [textMessageShot, setTextMessageShot] =React.useState('Здесь пока ничего нет!');
@@ -17,9 +19,7 @@ function SavedMovies(props) {
     const [checkboxState, setCheckboxState] = React.useState(false);
     const [moviesFind, setMoviesFind] = React.useState([]);
     const [moviesFindShot, setMoviesFindShot] = React.useState([]);
-    const [textReq, setTextReq] = React.useState('');
 
-    console.log(textReq)
     React.useEffect(() => {
         if (props.savedMovies.length > 0) {
             setIsMovies(true);
@@ -34,9 +34,31 @@ function SavedMovies(props) {
         }
     }, []);
 
+    React.useEffect(() => {
+        if (validForm.values.Search) {
+            setErrorText('');
+        }
+    }, [validForm.values.Search])
+
+    React.useEffect(() => {
+        if (props.savedMovies.length > 0) {
+            setMoviesFind(props.savedMovies)
+        } else {
+            setIsMovies(false)
+            setTextMessageShot('Здесь пока ничего нет!')
+        }
+    }, [props.savedMovies])
+
+
+
+
     function handleFindMoviesSubmit (e) {
         e.preventDefault();
-        setTextReq(validForm.values.Searc)
+        if (!validForm.values.Search) {
+            setErrorText('Нужно ввести ключевое слово');
+            return;
+        };
+        setEnableForm(false);
         FindMovies(
             props.savedMovies, 
             validForm.values.Search, 
@@ -46,10 +68,8 @@ function SavedMovies(props) {
             setTextMessageShot,
             setIsMovies,
             setIsMoviesShot);
-        console.log(textReq);
-        
+        setEnableForm(true);   
     }
-    console.log(textReq);
 
     return (
         <div className="SavedMovies">
@@ -58,13 +78,14 @@ function SavedMovies(props) {
                 loadingMovies={loadingMovies}
                 setLoadingMovies={setLoadingMovies}
                 textReq={validForm.values.Search}
-                textReqErr={validForm.errors.Search}
+                textReqErr={errorText}
                 setTextReq={validForm.handleChange}
                 textReqSaved={props.textReq}
                 checkboxStatus={checkboxState}
                 setCheckboxStatus={setCheckboxState}
                 onSubmit={handleFindMoviesSubmit}
                 isValid={validForm.isValid}
+                enableForm={enableForm}
             />
             <MoviesCardList
                 isMovies={checkboxState ? isMoviesShot : isMovies}

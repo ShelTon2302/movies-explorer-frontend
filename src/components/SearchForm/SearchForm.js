@@ -6,7 +6,6 @@ function SearchForm(props) {
 
     function handleSetCheckboxChecked (e) {
         props.setCheckboxStatus(e.target.checked);
-        console.log(props.checkboxStatus)
     }
 
     return (
@@ -21,15 +20,14 @@ function SearchForm(props) {
                     defaultValue={props.textReqSaved}
                     value={props.textReq}
                     onChange={props.setTextReq}
-                    minLength={2}
                     maxLength={30}
-                    required 
+                    disabled={!props.enableForm}
                 />
                 <span className="SearchForm__input-error">{props.textReqErr}</span>
                 <button 
                     type="submit" 
                     className="SearchForm__button"
-                    disabled={!props.isValid}
+                    disabled={!props.isValid && !props.enableForm}
                 >Найти</button>
             </form>
             <label className="SearchForm__label">
@@ -39,6 +37,7 @@ function SearchForm(props) {
                     name="ShotMovie"
                     checked={props.checkboxStatus}
                     onChange={handleSetCheckboxChecked}
+                    disabled={!props.enableForm}
                 />
                 <span className="SearchForm__newCheckbox"></span>
                 <span className="SearchForm__newCheckboxText">Короткометражки</span>

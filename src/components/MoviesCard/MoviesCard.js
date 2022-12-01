@@ -21,50 +21,43 @@ function MoviesCard(props) {
     };
 
     function handleAddDeleteMovies () {
-        let currentSavedMovie = props.savedMovies.find((item) => {
-            return item.movieId === props.item.id;
-        });
-
-        isLiked 
-            ?   
-                api.deleteMovie(currentSavedMovie._id)
-                    .then((res) => {
-                        props.handleSetSavedMovies(props.savedMovies.filter((m) => m._id !== currentSavedMovie._id));
-                    })
-            :
-                api.addMovie({
-                    country: props.item.country,
-                    director: props.item.director,
-                    duration: props.item.duration,
-                    year: props.item.year,
-                    description: props.item.description,
-                    image: `https://api.nomoreparties.co${props.item.image.url}`,
-                    trailerLink: props.item.trailerLink,
-                    thumbnail: `https://api.nomoreparties.co${props.item.image.url}`,
-                    movieId: props.item.id,
-                    nameRU: props.item.nameRU,
-                    nameEN: props.item.nameEN,
-                })
-                    .then((res) => {
-                        api.getSavedMovies()
-                            .then((res) => {
-                            if (res) {
-                                console.log(res);
-                                props.handleSetSavedMovies(res.movies);
-                            }
-                            })
-                            .catch((err) => {
-                            console.log(err);
-                            });
-                    });
         if (props.isSaved) {
+            console.log('props', props.item, 'saved', props.savedMovies);
             api.deleteMovie(props.item._id)
             .then((res) => {
-                props.handleSetSavedMovies(props.savedMovies.filter((m) => m._id !== currentSavedMovie._id));
+                props.handleSetSavedMovies(props.savedMovies.filter((m) => m._id !== props.item._id));
             })
+            console.log('props', props.item, 'saved', props.savedMovies);
 
-        } 
-
+        } else {
+            let currentSavedMovie = props.savedMovies.find((item) => {
+                return item.movieId === props.item.id;
+            });
+    
+            isLiked 
+                ?   
+                    api.deleteMovie(currentSavedMovie._id)
+                        .then((res) => {
+                            props.handleSetSavedMovies(props.savedMovies.filter((m) => m._id !== currentSavedMovie._id));
+                        })
+                :
+                    api.addMovie({
+                        country: props.item.country,
+                        director: props.item.director,
+                        duration: props.item.duration,
+                        year: props.item.year,
+                        description: props.item.description,
+                        image: `https://api.nomoreparties.co${props.item.image.url}`,
+                        trailerLink: props.item.trailerLink,
+                        thumbnail: `https://api.nomoreparties.co${props.item.image.url}`,
+                        movieId: props.item.id,
+                        nameRU: props.item.nameRU,
+                        nameEN: props.item.nameEN,
+                    })
+                        .then((res) => {
+                            props.handleSetSavedMovies([...props.savedMovies, res]);
+                        });
+        }
     }
 
     return (
