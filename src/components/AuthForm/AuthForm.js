@@ -19,7 +19,6 @@ function AuthForm(props) {
                         name='auth_email'
                         value={props.email}
                         onChange={props.handleChangeEmail}
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         required 
                     />
                     <span className="AuthForm__input-error">{props.emailErr}</span>
