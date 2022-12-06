@@ -1,9 +1,6 @@
 import { SHOT_DURATIOM } from '../const/const'
 
 function FindMovies (props) {
-    console.log(props);
-    console.log(props.isShot);
- 
     let find, message, isEnable;
     
     find = props.moviesList.filter(function (item) {

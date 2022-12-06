@@ -6,8 +6,6 @@ import Navigation from '../Navigation/Navigation';
 
 function Header(props) {
   const [enableMenu, setEnableMenu] = React.useState(false);
-  let loggedIn = localStorage.getItem('loggedIn');
-  console.log(loggedIn, !loggedIn)
 
   function openMenu() {
     setEnableMenu(true);

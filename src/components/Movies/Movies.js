@@ -27,17 +27,11 @@ function Movies(props) {
     const [begin, setBegin] = React.useState({}) 
     
     React.useEffect(() => {
-        //setBegin({});
-
         if (localStorage.getItem('allMovies')) {
             setAllMovies(JSON.parse(localStorage.getItem('allMovies')));
         }
-        let temp = JSON.parse(localStorage.getItem('regInfo'));
-        console.log(temp, props.regInfo)
-
-         if (localStorage.getItem('regInfo')) {
+        if (localStorage.getItem('regInfo')) {
             let regInfo = JSON.parse(localStorage.getItem('regInfo'));
-            console.log(regInfo);
             if (regInfo.moviesFind.length > 0) {
                 setMoviesFind(regInfo.moviesFind);
                 setIsMovies(true);
@@ -50,7 +44,6 @@ function Movies(props) {
             setCheckboxState(regInfo.checkboxState);
             setTextReg(regInfo.textReg);
         }
-        console.log('useEffect', moviesFind, textReg)
     }, [begin, validForm.isValid]);
 
     React.useEffect(() => {
@@ -58,8 +51,6 @@ function Movies(props) {
             setErrorText('');
         }
     }, [validForm.values.Search])
-
-    console.log(moviesFind, moviesFindShot)
 
     function  setFindMoviesParam(data) {
         setMoviesFind(data.find); 
@@ -69,7 +60,6 @@ function Movies(props) {
     }
 
     function  setFindMoviesShotParam(data) {
-        console.log(data)
         setMoviesFindShot(data.find); 
         setTextMessageShot(data.message);
         setIsMoviesShot(data.isEnable);
@@ -87,7 +77,6 @@ function Movies(props) {
             setTextReg(validForm.values.Search);
         };
         setEnableForm(false);
-        console.log(textReg)
 
         if (localStorage.getItem('allMovies') === null) {
             setLoadingMovies(true);
@@ -100,7 +89,6 @@ function Movies(props) {
                         isShot: false,
                         textReg: validForm.values.Search,
                     });
-                    console.log(find);
                     setFindMoviesParam(find);
                     
                     let findShot = FindMovies({
@@ -139,7 +127,6 @@ function Movies(props) {
                 isShot: false,
                 textReg: validForm.values.Search,
             });
-            console.log(find);
             setFindMoviesParam(find);
             let findShot = FindMovies({
                 moviesList: find.find,
@@ -156,14 +143,6 @@ function Movies(props) {
                 textReg: validForm.values.Search,
             }));
         };        
-        console.log(moviesFind)
-        console.log({
-            moviesFind: moviesFind,
-            moviesFindShot: moviesFindShot,
-            checkboxState: checkboxState,
-            textReg: validForm.values.Search,
-        })
-        setBegin({});
         setEnableForm(true);    
     }
 

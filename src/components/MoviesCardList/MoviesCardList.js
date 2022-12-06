@@ -21,7 +21,6 @@ function MoviesCardList(props) {
         }
 
         window.addEventListener('resize', handleResizeWindow);
-        console.log('useEffect')
     }, [props.begin, props.checkboxStatus]);
 
 

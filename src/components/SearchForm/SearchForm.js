@@ -3,16 +3,13 @@ import searchIcon from '../../images/search_icon.svg';
 import React from 'react';
 
 function SearchForm(props) {
-    console.log(props)
     const [text, setText] = React.useState(true);
 
     function onClickInput() {
         setText(false);
     }
-    console.log(props.textReq, props.checkboxStatus);
 
     function handleSetCheckboxChecked (e) {
-        console.log(e.target.checked);
         props.setCheckboxStatus(e.target.checked);
     }
 
