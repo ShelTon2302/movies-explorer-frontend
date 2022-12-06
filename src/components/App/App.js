@@ -11,6 +11,7 @@ import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import api from '../../utils/MainApi';
 import ProtectedRoute from '../../utils/ProtectedRoute';
+import { SHOT_DURATIOM } from '../../const/const'
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({
@@ -20,20 +21,21 @@ function App() {
   });
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [savedMoviesShot, setSavedMoviesShot] = React.useState([]);
-  const [regInfo, setRegInfo] = React.useState({});
   const [authStatus, setAuthStatus] = React.useState({});
   const [loginUser, setLoginUser] = React.useState({});
-  const [loggedIn, setLoggedIn] = React.useState(false)
+  //const [loggedIn, setLoggedIn] = React.useState(localStorage.getItem('loggedIn') ? localStorage.getItem('loggedIn') : false);
   const history = useHistory();
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = React.useState(false);
-  const [numberOfItem, setNumberOfItem] = React.useState(7); //количество показываемых карточек
+
+  //localStorage.setItem('loggedIn', false);
 
   React.useEffect(() => {
     // Получение данных пользователя
     api.getProfileInfo()
       .then((res) => {
         if (res) {
-          setLoggedIn(true);
+          //setLoggedIn(true);
+          localStorage.setItem('loggedIn', true)
           setCurrentUser({
             name: res.name,
             email: res.email,
@@ -42,8 +44,8 @@ function App() {
         }
       })
       .catch(() => {
-        setLoggedIn(false);
-        localStorage.removeItem('regInfo');
+        //setLoggedIn(false);
+        localStorage.setItem('loggedIn', false)
         history.push('/');
       });
       
@@ -55,7 +57,7 @@ function App() {
         // localStorage.setItem('savedMovies', JSON.stringify(res.movies));
         setSavedMoviesShot(res.movies.filter(function (item) {
           return (
-              item.duration <= 40 
+              item.duration <= SHOT_DURATIOM 
           );
       }));
       }
@@ -64,8 +66,6 @@ function App() {
       console.log(err);
     });
     
-    setRegInfo(JSON.parse(localStorage.getItem('regInfo')));
-
   },[loginUser]);
 
   function handleChangeAuthStatus(data) {
@@ -79,9 +79,9 @@ function App() {
     setLoginUser({});
   }
 
-  function handleChangeLoggedIn(data) {
-    setLoggedIn(data);
-  }
+  //function handleChangeLoggedIn(data) {
+  //  setLoggedIn(data);
+  //}
 
   function closeTooltipPopup() {
     setIsInfoTooltipOpen(false);
@@ -97,7 +97,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main 
-              loggedIn={loggedIn}
+              //loggedIn={loggedIn}
             />
           </Route>
           <Route path="/signin">
@@ -106,7 +106,7 @@ function App() {
               authStatus={authStatus}
               handleChangeAuthStatus={handleChangeAuthStatus}
               handleChangeLogginUser={handleChangeLoginUser}
-              handleChangeLoggedIn={handleChangeLoggedIn}
+              //handleChangeLoggedIn={handleChangeLoggedIn}
               setCurrentUser={setCurrentUser}
               handleTooltipClick={handleTooltipClick}
               isInfoTooltipOpen={isInfoTooltipOpen}
@@ -119,7 +119,7 @@ function App() {
               authStatus={authStatus}
               handleChangeAuthStatus={handleChangeAuthStatus}
               handleChangeLogginUser={handleChangeLoginUser}
-              handleChangeLoggedIn={handleChangeLoggedIn}
+              //handleChangeLoggedIn={handleChangeLoggedIn}
               setCurrentUser={setCurrentUser}
               handleTooltipClick={handleTooltipClick}
               isInfoTooltipOpen={isInfoTooltipOpen}
@@ -129,31 +129,26 @@ function App() {
           <ProtectedRoute
             path="/movies"
             component={Movies}
-            loggedIn={loggedIn}
+            //loggedIn={loggedIn}
             history={history}
             savedMovies={savedMovies}
-            regInfo={regInfo}
             handleSetSavedMovies={setSavedMovies}
-            numberOfItem={numberOfItem}
-            setNumberOfItem={setNumberOfItem}
           />
           <ProtectedRoute
             path="/saved-movies"
             component={SavedMovies}
-            loggedIn={loggedIn}
+            //loggedIn={loggedIn}
             history={history}
             savedMovies={savedMovies}
             handleSetSavedMovies={setSavedMovies}
             savedMoviesShot={savedMoviesShot}
             handleSetSavedMoviesShot={setSavedMoviesShot}
-            numberOfItem={numberOfItem}
-            setNumberOfItem={setNumberOfItem}
           />
           <ProtectedRoute
             path="/profile"
             component={Profile}
-            loggedIn={loggedIn}
-            handleChangeLoggedIn={handleChangeLoggedIn}
+            //loggedIn={loggedIn}
+            //handleChangeLoggedIn={handleChangeLoggedIn}
             authStatus={authStatus}
             handleChangeAuthStatus={handleChangeAuthStatus}
             setCurrentUser={setCurrentUser}

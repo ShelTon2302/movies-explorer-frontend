@@ -13,7 +13,8 @@ function Login(props) {
         api.login(validForm.values.auth_email, validForm.values.auth_pass)
             .then ((res) => {
             if (res) {
-                props.handleChangeLoggedIn(true);
+                //props.handleChangeLoggedIn(true);
+                localStorage.setItem('loggedIn', true)
                 props.handleChangeLogginUser();
             } else {
                 props.handleChangeAuthStatus({

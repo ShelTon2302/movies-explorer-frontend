@@ -13,7 +13,8 @@ function Register(props) {
         api.register(validForm.values.auth_name, validForm.values.auth_email, validForm.values.auth_pass)
             .then ((res) => {
                 if (res) {
-                    props.handleChangeLoggedIn(true);
+                    //props.handleChangeLoggedIn(true);
+                    localStorage.setItem('loggedIn', true)
                     props.handleChangeLogginUser();
                 } else {
                     props.handleChangeAuthStatus({

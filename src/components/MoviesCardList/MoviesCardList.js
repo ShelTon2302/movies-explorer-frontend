@@ -1,11 +1,11 @@
 import './MoviesCardList.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import { NUMBER_OF_ITEMS, NUMBER_OF_ITEMS_MOB, WIDTH_OF_MOB } from '../../const/const'
 
 function MoviesCardList(props) {
     const [hiddenMoreButton, setHiddenMoreButton] = React.useState(true);
-    const [endNum, setEndNum] = React.useState(0);
+    const [endNum, setEndNum] = React.useState(NUMBER_OF_ITEMS);
     const [pathOfMovies, setPathOfMovies] = React.useState([]);
     const [numberOfCard, setNumberOfCard] = React.useState(NUMBER_OF_ITEMS);
 
@@ -15,11 +15,14 @@ function MoviesCardList(props) {
             setHiddenMoreButton(false);
             setEndNum(endNum + numberOfCard);
             setPathOfMovies(props.movies.slice(0, numberOfCard));
+        } else {
+            setHiddenMoreButton(true);
+            setEndNum(numberOfCard);
         }
 
         window.addEventListener('resize', handleResizeWindow);
-
-    }, [props.begin]);
+        console.log('useEffect')
+    }, [props.begin, props.checkboxStatus]);
 
 
     function pressMoreButton () {
@@ -28,7 +31,7 @@ function MoviesCardList(props) {
             setPathOfMovies(props.movies.slice(0, endNum));
         } else {
             setHiddenMoreButton(true);
-            setEndNum(0);
+            setEndNum(NUMBER_OF_ITEMS);
             setPathOfMovies([]);
         }        
     }
@@ -58,7 +61,7 @@ function MoviesCardList(props) {
                                     savedMovies={props.savedMovies}
                                     handleSetSavedMovies={props.handleSetSavedMovies}
                                 />)
-                        :
+                            :
                                 pathOfMovies.map(item => <MoviesCard 
                                     item={item}
                                     isSaved={props.isSaved}

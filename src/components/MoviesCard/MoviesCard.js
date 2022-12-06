@@ -61,15 +61,15 @@ function MoviesCard(props) {
     }
 
     return (
-        <div className="MoviesCard">
-            <ul className="MoviesCard__item">
-                <li className="MoviesCard__element">
+        <div className="MoviesCard" id={props.item.movieId}>
+            <ul className="MoviesCard__item" id='card'>
+                <li className="MoviesCard__element" id='cardTitle'>
                     <h4 className="MoviesCard__title">{props.item.nameRU}</h4>
                 </li>
-                <li className="MoviesCard__element">
+                <li className="MoviesCard__element" id='cardDuration'>
                     <p className="MoviesCard__duration">{durationHHMM}</p>
                 </li>
-                <li className="MoviesCard__element">
+                <li className="MoviesCard__element" id='cardButton'>
                     <button 
                         type="button" 
                         className={props.isSaved ? 'MovieCard__delete' : cardLikeButtonClassName} 
@@ -78,7 +78,7 @@ function MoviesCard(props) {
                     >
                     </button>
                 </li>
-                <li className="MoviesCard__element">
+                <li className="MoviesCard__element" id='cardLink'>
                     <a className="MoviesCard__link" href={props.item.trailerLink} target='_blank' rel='noreferrer'>
                         <img className="MoviesCard__thumbnail" src={props.isSaved ? props.item.thumbnail : `https://api.nomoreparties.co${props.item.image.url}`} alt="thumbnail "></img>
                     </a>

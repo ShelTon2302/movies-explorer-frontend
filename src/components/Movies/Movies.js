@@ -19,7 +19,7 @@ function Movies(props) {
     const [isMovies, setIsMovies] = React.useState(false);
     const [isMoviesShot, setIsMoviesShot] = React.useState(false);
     const [allMovies, setAllMovies] = React.useState([]);
-    const [textReg, setTextReg] = React.useState(props.regInfo ? props.regInfo.textReg : '');
+    const [textReg, setTextReg] = React.useState('');
     const [checkboxState, setCheckboxState] = React.useState(false);
     const [moviesFind, setMoviesFind] = React.useState([]);
     const [moviesFindShot, setMoviesFindShot] = React.useState([]);
@@ -27,27 +27,54 @@ function Movies(props) {
     const [begin, setBegin] = React.useState({}) 
     
     React.useEffect(() => {
-        setBegin({});
+        //setBegin({});
 
         if (localStorage.getItem('allMovies')) {
             setAllMovies(JSON.parse(localStorage.getItem('allMovies')));
         }
-         if (props.regInfo) {
-            if (props.regInfo.moviesFind.length > 0) {
-                setMoviesFind(props.regInfo.moviesFind);
+        let temp = JSON.parse(localStorage.getItem('regInfo'));
+        console.log(temp, props.regInfo)
+
+         if (localStorage.getItem('regInfo')) {
+            let regInfo = JSON.parse(localStorage.getItem('regInfo'));
+            console.log(regInfo);
+            if (regInfo.moviesFind.length > 0) {
+                setMoviesFind(regInfo.moviesFind);
                 setIsMovies(true);
             }
-            setCheckboxState(props.regInfo.checkboxState);
-            setTextReg(props.regInfo.textReg);
+            if (regInfo.moviesFindShot.length > 0) {
+                setMoviesFindShot(regInfo.moviesFindShot);
+                setIsMoviesShot(true);
+            }
+
+            setCheckboxState(regInfo.checkboxState);
+            setTextReg(regInfo.textReg);
         }
-        console.log('useEffect')
-    }, []);
+        console.log('useEffect', moviesFind, textReg)
+    }, [begin, validForm.isValid]);
 
     React.useEffect(() => {
         if (validForm.values.Search) {
             setErrorText('');
         }
     }, [validForm.values.Search])
+
+    console.log(moviesFind, moviesFindShot)
+
+    function  setFindMoviesParam(data) {
+        setMoviesFind(data.find); 
+        setTextMessage(data.message);
+        setIsMovies(data.isEnable);
+
+    }
+
+    function  setFindMoviesShotParam(data) {
+        console.log(data)
+        setMoviesFindShot(data.find); 
+        setTextMessageShot(data.message);
+        setIsMoviesShot(data.isEnable);
+
+    }
 
     function handleFindMoviesSubmit (e) {
         e.preventDefault();
@@ -56,6 +83,7 @@ function Movies(props) {
             return;
         };
         if (validForm.values.Search) {
+            console.log(validForm.values.Search);
             setTextReg(validForm.values.Search);
         };
         setEnableForm(false);
@@ -66,15 +94,30 @@ function Movies(props) {
             getMovies()
                 .then((res) => {
                     localStorage.setItem('allMovies', JSON.stringify(res));
-                    FindMovies(
-                        res, 
-                        validForm.values.Search ? validForm.values.Search : textReg,
-                        setMoviesFind, 
-                        setMoviesFindShot, 
-                        setTextMessage, 
-                        setTextMessageShot,
-                        setIsMovies,
-                        setIsMoviesShot);
+                    setTextReg(validForm.values.Search);
+                    let find = FindMovies({
+                        moviesList: res,
+                        isShot: false,
+                        textReg: validForm.values.Search,
+                    });
+                    console.log(find);
+                    setFindMoviesParam(find);
+                    
+                    let findShot = FindMovies({
+                        moviesList: find.find,
+                        isShot: true,
+                        textReg: validForm.values.Search,
+
+                    });
+                    setFindMoviesShotParam(findShot)
+                    
+                    setBegin({});
+                    localStorage.setItem('regInfo', JSON.stringify({
+                        moviesFind: find.find,
+                        moviesFindShot: findShot.find,
+                        checkboxState: checkboxState,
+                        textReg: validForm.values.Search,
+                    }));
                 })
                 .then((res) => {
                     setAllMovies(res);
@@ -90,24 +133,37 @@ function Movies(props) {
                     return;    
                 });
         }  else {
-            FindMovies(
-                allMovies, 
-                validForm.values.Search ? validForm.values.Search : textReg,
-                setMoviesFind, 
-                setMoviesFindShot, 
-                setTextMessage, 
-                setTextMessageShot,
-                setIsMovies,
-                setIsMoviesShot
-            );
+            setTextReg(validForm.values.Search);
+            let find = FindMovies({
+                moviesList: allMovies,
+                isShot: false,
+                textReg: validForm.values.Search,
+            });
+            console.log(find);
+            setFindMoviesParam(find);
+            let findShot = FindMovies({
+                moviesList: find.find,
+                isShot: true,
+                textReg: validForm.values.Search,
+
+            });
+            setFindMoviesShotParam(findShot)
             setBegin({});
+            localStorage.setItem('regInfo', JSON.stringify({
+                moviesFind: find.find,
+                moviesFindShot: findShot.find,
+                checkboxState: checkboxState,
+                textReg: validForm.values.Search,
+            }));
         };        
-        localStorage.setItem('regInfo', JSON.stringify({
-            moviesFind,
-            moviesFindShot,
-            checkboxState,
-            textReg
-        }));
+        console.log(moviesFind)
+        console.log({
+            moviesFind: moviesFind,
+            moviesFindShot: moviesFindShot,
+            checkboxState: checkboxState,
+            textReg: validForm.values.Search,
+        })
+        setBegin({});
         setEnableForm(true);    
     }
 
@@ -138,7 +194,7 @@ function Movies(props) {
                         isSaved={false}
                         savedMovies={props.savedMovies}
                         handleSetSavedMovies={props.handleSetSavedMovies}
-                        numberOfItem={props.numberOfItem}
+                        checkboxStatus={checkboxState}
                         begin={begin}
                     />
             }

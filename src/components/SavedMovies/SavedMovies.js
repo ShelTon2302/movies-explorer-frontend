@@ -19,17 +19,17 @@ function SavedMovies(props) {
     const [checkboxState, setCheckboxState] = React.useState(false);
     const [moviesFind, setMoviesFind] = React.useState([]);
     const [moviesFindShot, setMoviesFindShot] = React.useState([]);
+    const [textReg, setTextReg] = React.useState('');
+
+    const [begin, setBegin] = React.useState({}) 
 
     React.useEffect(() => {
+        setMoviesFind(props.savedMovies);
         if (props.savedMovies.length > 0) {
             setIsMovies(true);
-            setMoviesFind(props.savedMovies);
-            setIsMovies(true);
         }
-
+        setMoviesFindShot(props.savedMoviesShot);
         if (props.savedMoviesShot.length > 0) {
-            setIsMoviesShot(true);
-            setMoviesFindShot(props.savedMoviesShot);
             setIsMoviesShot(true);
         }
     }, []);
@@ -41,16 +41,49 @@ function SavedMovies(props) {
     }, [validForm.values.Search])
 
     React.useEffect(() => {
-        if (props.savedMovies.length > 0) {
-            setMoviesFind(props.savedMovies)
+        let find = FindMovies({
+            moviesList: props.savedMovies,
+            isShot: false,
+            textReg: textReg,
+        });
+        if (find.find.length > 0) {
+            setMoviesFind(find.find);
+            setIsMovies(true);
+            let findShot = FindMovies({
+                moviesList: find.find,
+                isShot: true,
+                textReg: '',
+            });
+            if (findShot.find.length > 0) {
+                setMoviesFindShot(findShot.find);
+                setIsMoviesShot(true);
+            } else {
+                setIsMoviesShot(false);
+                setTextMessageShot('Здесь пока ничего нет!')
+            }
+    
         } else {
-            setIsMovies(false)
-            setTextMessageShot('Здесь пока ничего нет!')
+            setIsMovies(false);
+            setTextMessage('Здесь пока ничего нет!');
+            setIsMoviesShot(false);
+            setTextMessageShot('Здесь пока ничего нет!');
         }
     }, [props.savedMovies])
 
+    function  setFindMoviesParam(data) {
+        setMoviesFind(data.find); 
+        setTextMessage(data.message);
+        setIsMovies(data.isEnable);
 
+    }
 
+    function  setFindMoviesShotParam(data) {
+        console.log(data)
+        setMoviesFindShot(data.find); 
+        setTextMessageShot(data.message);
+        setIsMoviesShot(data.isEnable);
+
+    }
 
     function handleFindMoviesSubmit (e) {
         e.preventDefault();
@@ -58,16 +91,24 @@ function SavedMovies(props) {
             setErrorText('Нужно ввести ключевое слово');
             return;
         };
+        setTextReg(validForm.values.Search);
         setEnableForm(false);
-        FindMovies(
-            props.savedMovies, 
-            validForm.values.Search, 
-            setMoviesFind, 
-            setMoviesFindShot, 
-            setTextMessage, 
-            setTextMessageShot,
-            setIsMovies,
-            setIsMoviesShot);
+        console.log(props.savedMovies)
+        let find = FindMovies({
+            moviesList: props.savedMovies,
+            isShot: false,
+            textReg: validForm.values.Search,
+        });
+        console.log(find);
+        setFindMoviesParam(find);
+        let findShot = FindMovies({
+            moviesList: find.find,
+            isShot: true,
+            textReg: '',
+        });
+        setFindMoviesShotParam(findShot)
+        setBegin({}); 
+
         setEnableForm(true);   
     }
 
@@ -94,8 +135,9 @@ function SavedMovies(props) {
                 isSaved={true}
                 savedMovies={props.savedMovies}
                 handleSetSavedMovies={props.handleSetSavedMovies}
-                numberOfItem={props.numberOfItem}
+                checkboxStatus={checkboxState}
                 moreButtonEnable={true}
+                begin={begin}
             />
             <Footer />
         </div>

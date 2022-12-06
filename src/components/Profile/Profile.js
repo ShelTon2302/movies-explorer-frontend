@@ -72,7 +72,9 @@ function Profile(props) {
     function isExit () {
         api.logout()
             .then(() => {
-                props.handleChangeLoggedIn(false);
+                //props.handleChangeLoggedIn(false);
+                localStorage.setItem('loggedIn', false);
+                localStorage.removeItem('allMovies');
                 localStorage.removeItem('regInfo');
             })
             .then(() => {

@@ -3,8 +3,16 @@ import searchIcon from '../../images/search_icon.svg';
 import React from 'react';
 
 function SearchForm(props) {
+    console.log(props)
+    const [text, setText] = React.useState(true);
+
+    function onClickInput() {
+        setText(false);
+    }
+    console.log(props.textReq, props.checkboxStatus);
 
     function handleSetCheckboxChecked (e) {
+        console.log(e.target.checked);
         props.setCheckboxStatus(e.target.checked);
     }
 
@@ -17,9 +25,9 @@ function SearchForm(props) {
                     placeholder="Фильм" 
                     className="SearchForm__input"
                     name="Search"
-                    defaultValue={props.textReqSaved}
-                    value={props.textReq}
+                    value={text ? props.textReqSaved : props.textReq}
                     onChange={props.setTextReq}
+                    onClick={onClickInput}
                     maxLength={30}
                     disabled={!props.enableForm}
                 />
