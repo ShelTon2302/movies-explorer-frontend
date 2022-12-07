@@ -5,6 +5,7 @@ import logo from '../../images/header_logo.svg';
 import Navigation from '../Navigation/Navigation';
 
 function Header(props) {
+  //let logIn = localStorage.getItem('loggedIn');
   const [enableMenu, setEnableMenu] = React.useState(false);
 
   function openMenu() {
@@ -19,7 +20,7 @@ function Header(props) {
     <header className={`Header${props.isAbout ? ' Header_backgroud_blue' : ''}`}>
       <div className="Header__content">
         <Link className="Header__link" to="/"><img className="Header__logo" src={logo} alt="logo"></img></Link>
-        {(props.isAbout && (localStorage.getItem('loggedIn') === 'false')) 
+        {(props.isAbout && !localStorage.getItem('loggedIn')) 
           ? 
             <div className="Header__about">
               {/*<img className="Header__logo" src={logo} alt="logo"></img>*/}

@@ -33,20 +33,23 @@ function App() {
     // Получение данных пользователя
     api.getProfileInfo()
       .then((res) => {
+        console.log(res) 
         if (res) {
           //setLoggedIn(true);
-          localStorage.setItem('loggedIn', true)
+          localStorage.setItem('loggedIn', true);
           setCurrentUser({
             name: res.name,
             email: res.email,
             _id: res._id
           });
+        } else {
+          localStorage.removeItem('loggedIn');
+          history.push('/');
         }
       })
-      .catch(() => {
-        //setLoggedIn(false);
-        localStorage.setItem('loggedIn', false)
+      .catch((err) => {
         history.push('/');
+        localStorage.removeItem('loggedIn');
       });
       
     // Получение списка сохраненных фильмов пользователя

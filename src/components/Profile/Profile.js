@@ -73,7 +73,7 @@ function Profile(props) {
         api.logout()
             .then(() => {
                 //props.handleChangeLoggedIn(false);
-                localStorage.setItem('loggedIn', false);
+                localStorage.removeItem('loggedIn');
                 localStorage.removeItem('allMovies');
                 localStorage.removeItem('regInfo');
             })
