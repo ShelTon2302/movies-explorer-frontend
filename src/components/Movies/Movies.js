@@ -27,7 +27,7 @@ function Movies(props) {
     const [widthWin, setWidthWin] = React.useState(window.innerWidth);
 
 
-    const [begin, setBegin] = React.useState({}) 
+    const [begin, setBegin] = React.useState({});
 
     React.useEffect(() => {
         const resizeWindow = () => {
