@@ -73,14 +73,12 @@ function Movies(props) {
         setMoviesFind(data.find); 
         setTextMessage(data.message);
         setIsMovies(data.isEnable);
-
     }
 
     function  setFindMoviesShotParam(data) {
         setMoviesFindShot(data.find); 
         setTextMessageShot(data.message);
         setIsMoviesShot(data.isEnable);
-
     }
 
     function handleFindMoviesSubmit (e) {
@@ -121,7 +119,6 @@ function Movies(props) {
                     localStorage.setItem('regInfo', JSON.stringify({
                         moviesFind: find.find,
                         moviesFindShot: findShot.find,
-                        //checkboxState: checkboxState,
                         textReg: validForm.values.Search,
                     }));
                 })
@@ -157,7 +154,6 @@ function Movies(props) {
             localStorage.setItem('regInfo', JSON.stringify({
                 moviesFind: find.find,
                 moviesFindShot: findShot.find,
-                //checkboxState: checkboxState,
                 textReg: validForm.values.Search,
             }));
         };        

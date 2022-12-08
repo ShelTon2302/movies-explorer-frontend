@@ -10,6 +10,7 @@ function MoviesCard(props) {
             props.savedMovies.some((item) => {
                 return item.movieId === props.item.id;
             });
+    console.log(isLiked);
     const cardLikeButtonClassName = `MovieCard__like${isLiked ? ' MovieCard__like_active' : ''}`;
 
     let durationHHMM = getTimeFromMins(props.item.duration);
@@ -22,7 +23,6 @@ function MoviesCard(props) {
 
     function handleAddDeleteMovies () {
         if (props.isSaved) {
-            console.log('props', props.item, 'saved', props.savedMovies);
             api.deleteMovie(props.item._id)
             .then((res) => {
                 props.handleSetSavedMovies(props.savedMovies.filter((m) => m._id !== props.item._id));
@@ -33,6 +33,7 @@ function MoviesCard(props) {
             let currentSavedMovie = props.savedMovies.find((item) => {
                 return item.movieId === props.item.id;
             });
+            console.log(currentSavedMovie);
     
             isLiked 
                 ?   
@@ -55,6 +56,7 @@ function MoviesCard(props) {
                         nameEN: props.item.nameEN,
                     })
                         .then((res) => {
+                            console.log(res)
                             props.handleSetSavedMovies([...props.savedMovies, res]);
                         });
         }

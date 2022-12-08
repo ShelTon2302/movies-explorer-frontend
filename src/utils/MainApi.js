@@ -9,6 +9,7 @@ class Api {
     }
 
     _checkResponce(res) {
+        console.log(res)
         try {
             if (res.status === 200 || res.status === 201){
                 return res.json();
