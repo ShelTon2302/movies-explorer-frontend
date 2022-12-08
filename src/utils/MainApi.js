@@ -121,7 +121,7 @@ class Api {
 }
 
 const api = new Api ({
-    baseUrl: 'http://localhost:3001', //'https://api.project-movies.nomoredomains.icu',
+    baseUrl: 'https://api.project-movies.nomoredomains.icu',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
