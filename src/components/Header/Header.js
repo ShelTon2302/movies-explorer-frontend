@@ -5,7 +5,6 @@ import logo from '../../images/header_logo.svg';
 import Navigation from '../Navigation/Navigation';
 
 function Header(props) {
-  //let logIn = localStorage.getItem('loggedIn');
   const [enableMenu, setEnableMenu] = React.useState(false);
 
   function openMenu() {
@@ -23,7 +22,6 @@ function Header(props) {
         {(props.isAbout && !localStorage.getItem('loggedIn')) 
           ? 
             <div className="Header__about">
-              {/*<img className="Header__logo" src={logo} alt="logo"></img>*/}
               <Link className="Header__regLink" to="/signup">Регистрация</Link>
               <Link className="Header__logLink" to="/signin">Войти </Link>
             </div>
@@ -38,7 +36,7 @@ function Header(props) {
           </div>    
     </header>
   );
-  }
+}
   
   export default Header;
   

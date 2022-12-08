@@ -7,7 +7,11 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   return (
     <Route>
       {() =>
-        localStorage.getItem('loggedIn') ? <Component {...props} /> : <Redirect exact to="/" />
+        props.authWindow
+          ?
+            localStorage.getItem('loggedIn') ? <Redirect exact to="/" /> : <Component {...props} />
+          :
+            localStorage.getItem('loggedIn') ? <Component {...props} /> : <Redirect exact to="/" />
       }
     </Route>
   );

@@ -54,14 +54,6 @@
     border-radius: 4px;
 }
 
-.Navigation__profileLink {
-    width: 26px;
-    height: 30px;
-    background-color: #313131;
-    border: none;
-    border-radius: 4px;
-}
-
 @media screen and (min-width: 990px){  
     .Navigation__menuLink:first-child {
         visibility: hidden;

@@ -9,12 +9,10 @@ import Footer from '../Footer/Footer';
 
 
 function Main(props) {
-    //console.log(props.loggedIn);
     return (
         <>
             <Header
                 isAbout='true'
-                //loggedIn={props.loggedIn}   
             />
             <main className='Main'>
                 <Promo />

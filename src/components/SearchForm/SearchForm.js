@@ -11,6 +11,9 @@ function SearchForm(props) {
 
     function handleSetCheckboxChecked (e) {
         props.setCheckboxStatus(e.target.checked);
+        localStorage.setItem('checkbox', JSON.stringify({
+            checkboxState: e.target.checked,
+        })); 
     }
 
     return (

@@ -1,5 +1,5 @@
 import './MoviesCardList.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import { NUMBER_OF_ITEMS, NUMBER_OF_ITEMS_MOB, WIDTH_OF_MOB } from '../../const/const'
 
@@ -10,6 +10,22 @@ function MoviesCardList(props) {
     const [numberOfCard, setNumberOfCard] = React.useState(NUMBER_OF_ITEMS);
 
     React.useEffect(() => {
+        if (props.widthWin < WIDTH_OF_MOB) {
+            if (numberOfCard !== NUMBER_OF_ITEMS_MOB) {
+                props.setBegin({});
+            }
+            setNumberOfCard(NUMBER_OF_ITEMS_MOB);
+        } else {
+            if (numberOfCard !== NUMBER_OF_ITEMS) {
+                props.setBegin({});
+            }
+            setNumberOfCard(NUMBER_OF_ITEMS);
+        }
+
+    }, [props.widthWin]);
+
+    
+    React.useEffect(() => {
         if (props.movies.length > numberOfCard && !props.isSaved)
         {
             setHiddenMoreButton(false);
@@ -19,8 +35,6 @@ function MoviesCardList(props) {
             setHiddenMoreButton(true);
             setEndNum(numberOfCard);
         }
-
-        window.addEventListener('resize', handleResizeWindow);
     }, [props.begin, props.checkboxStatus]);
 
 
@@ -34,18 +48,6 @@ function MoviesCardList(props) {
             setPathOfMovies([]);
         }        
     }
-
-
-    function handleResizeWindow(event) {
-        if (event.target.window.innerWidth < WIDTH_OF_MOB) {
-            setNumberOfCard(NUMBER_OF_ITEMS_MOB);
-        } else {
-            setNumberOfCard(NUMBER_OF_ITEMS);
-        }
-        window.removeEventListener('resize', handleResizeWindow);
-      }
-      
-
     
     return (
         <section className="MoviesCardList">

@@ -19,6 +19,7 @@ function AuthForm(props) {
                         name='auth_email'
                         value={props.email}
                         onChange={props.handleChangeEmail}
+                        disabled={props.disableForm}
                         required 
                     />
                     <span className="AuthForm__input-error">{props.emailErr}</span>
@@ -29,7 +30,8 @@ function AuthForm(props) {
                         className='AuthForm__input AuthForm__input_pass'
                         name='auth_pass'
                         value={props.pass}
-                        onChange={props.handleChangePass}      
+                        onChange={props.handleChangePass} 
+                        disabled={props.disableForm}     
                         required 
                     />
                     <span className="AuthForm__input-error">{props.passErr}</span>
@@ -39,7 +41,7 @@ function AuthForm(props) {
                     type="submit" 
                     className="AuthForm__submit" 
                     aria-label={props.buttonText}
-                    disabled={!props.isValid}
+                    disabled={!props.isValid && props.disableForm}
                 >{props.buttonText}</button>
             </form>
             <div className="AuthForm__textArea">

@@ -74,7 +74,6 @@ function SavedMovies(props) {
         setMoviesFind(data.find); 
         setTextMessage(data.message);
         setIsMovies(data.isEnable);
-
     }
 
     function  setFindMoviesShotParam(data) {
@@ -82,7 +81,6 @@ function SavedMovies(props) {
         setMoviesFindShot(data.find); 
         setTextMessageShot(data.message);
         setIsMoviesShot(data.isEnable);
-
     }
 
     function handleFindMoviesSubmit (e) {
@@ -108,7 +106,6 @@ function SavedMovies(props) {
         });
         setFindMoviesShotParam(findShot)
         setBegin({}); 
-
         setEnableForm(true);   
     }
 

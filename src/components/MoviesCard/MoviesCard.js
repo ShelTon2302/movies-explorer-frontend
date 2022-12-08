@@ -85,7 +85,6 @@ function MoviesCard(props) {
                 </li>
             </ul>
         </div>
-
     )
 };
 

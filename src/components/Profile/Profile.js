@@ -23,18 +23,12 @@ function Profile(props) {
             // введенное имя совпадает с сохраненным или не менялось
             (validForm.values.profile_name === currentUser.name || !validForm.values.profile_name)
         ) {
-            console.log('true')
             setDisableSubmit(true);
         } else {
-            console.log('false')
             setDisableSubmit(false);
- 
         }
 
-        console.log('error', disableSubmit);
-
     }, [validForm.handleChange])
-
 
     function handleSubmit (e) {
         e.preventDefault();
@@ -55,8 +49,6 @@ function Profile(props) {
                     error: false
                 });
                 props.handleTooltipClick();
-
-                //props.history.goBack();
             } else {
                 props.handleChangeAuthStatus({
                     msg: 'Что-то пошло не так! Попробуйте ещё раз.',
@@ -72,10 +64,10 @@ function Profile(props) {
     function isExit () {
         api.logout()
             .then(() => {
-                //props.handleChangeLoggedIn(false);
                 localStorage.removeItem('loggedIn');
                 localStorage.removeItem('allMovies');
                 localStorage.removeItem('regInfo');
+                localStorage.removeItem('checkbox');
             })
             .then(() => {
                 props.history.push('/');        
@@ -119,7 +111,6 @@ function Profile(props) {
                             defaultValue={currentUser.email} 
                             className="Profile__input"
                             name='profile_email'
-                            //pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                             value={validForm.values.profile_email}
                             onChange={validForm.handleChange} 
                             disabled={disableForm}     

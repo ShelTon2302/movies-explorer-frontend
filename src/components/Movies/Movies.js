@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 import { useFormWithValidation } from '../../utils/Validation'; 
 import { getMovies } from '../../utils/MoviesApi';
 
+
 function Movies(props) {
     const validForm = useFormWithValidation();
     const [errorText, setErrorText] = React.useState('');
@@ -23,9 +24,21 @@ function Movies(props) {
     const [checkboxState, setCheckboxState] = React.useState(false);
     const [moviesFind, setMoviesFind] = React.useState([]);
     const [moviesFindShot, setMoviesFindShot] = React.useState([]);
+    const [widthWin, setWidthWin] = React.useState(window.innerWidth);
+
 
     const [begin, setBegin] = React.useState({}) 
-    
+
+    React.useEffect(() => {
+        const resizeWindow = () => {
+            return setTimeout(() => {
+                setWidthWin(window.innerWidth);
+            }, 1000)
+        }
+        window.addEventListener('resize', resizeWindow);
+        return () => window.removeEventListener('resize', resizeWindow);
+    }, []);    
+
     React.useEffect(() => {
         if (localStorage.getItem('allMovies')) {
             setAllMovies(JSON.parse(localStorage.getItem('allMovies')));
@@ -41,9 +54,13 @@ function Movies(props) {
                 setIsMoviesShot(true);
             }
 
-            setCheckboxState(regInfo.checkboxState);
             setTextReg(regInfo.textReg);
         }
+        if (localStorage.getItem('checkbox')) {
+            let checkbox = JSON.parse(localStorage.getItem('checkbox'));
+            setCheckboxState(checkbox.checkboxState);
+        }
+
     }, [begin, validForm.isValid]);
 
     React.useEffect(() => {
@@ -73,8 +90,9 @@ function Movies(props) {
             return;
         };
         if (validForm.values.Search) {
-            console.log(validForm.values.Search);
             setTextReg(validForm.values.Search);
+        } else {
+            return;
         };
         setEnableForm(false);
 
@@ -103,7 +121,7 @@ function Movies(props) {
                     localStorage.setItem('regInfo', JSON.stringify({
                         moviesFind: find.find,
                         moviesFindShot: findShot.find,
-                        checkboxState: checkboxState,
+                        //checkboxState: checkboxState,
                         textReg: validForm.values.Search,
                     }));
                 })
@@ -139,7 +157,7 @@ function Movies(props) {
             localStorage.setItem('regInfo', JSON.stringify({
                 moviesFind: find.find,
                 moviesFindShot: findShot.find,
-                checkboxState: checkboxState,
+                //checkboxState: checkboxState,
                 textReg: validForm.values.Search,
             }));
         };        
@@ -174,6 +192,8 @@ function Movies(props) {
                         savedMovies={props.savedMovies}
                         handleSetSavedMovies={props.handleSetSavedMovies}
                         checkboxStatus={checkboxState}
+                        widthWin={widthWin}
+                        setBegin={setBegin}
                         begin={begin}
                     />
             }

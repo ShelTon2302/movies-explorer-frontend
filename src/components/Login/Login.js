@@ -3,17 +3,18 @@ import './Login.css';
 import AuthForm from '../AuthForm/AuthForm';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import api from '../../utils/MainApi';
-import { useFormWithValidation } from '../../utils/Validation'; 
+import { useFormWithValidation } from '../../utils/Validation';
 
 function Login(props) {
     const validForm = useFormWithValidation();
+    const [disableForm, setDisableForm] = React.useState(false)
 
     function handleLogSubmit(e) {
         e.preventDefault();
+        setDisableForm(true);
         api.login(validForm.values.auth_email, validForm.values.auth_pass)
             .then ((res) => {
             if (res) {
-                //props.handleChangeLoggedIn(true);
                 localStorage.setItem('loggedIn', true)
                 props.handleChangeLogginUser();
             } else {
@@ -26,6 +27,7 @@ function Login(props) {
             })
             .catch((err) => console.log(err))
             .finally(() => {
+                setDisableForm(false);
                 validForm.resetForm();
                 props.history.push('/movies');
             });
@@ -46,6 +48,7 @@ function Login(props) {
                 emailErr={validForm.errors.auth_email}
                 passErr={validForm.errors.auth_pass}
                 isValid={validForm.isValid}
+                disableForm={disableForm}
                 onSubmit={handleLogSubmit}
             />
             <InfoTooltip 

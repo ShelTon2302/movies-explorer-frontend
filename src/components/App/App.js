@@ -23,19 +23,15 @@ function App() {
   const [savedMoviesShot, setSavedMoviesShot] = React.useState([]);
   const [authStatus, setAuthStatus] = React.useState({});
   const [loginUser, setLoginUser] = React.useState({});
-  //const [loggedIn, setLoggedIn] = React.useState(localStorage.getItem('loggedIn') ? localStorage.getItem('loggedIn') : false);
   const history = useHistory();
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = React.useState(false);
 
-  //localStorage.setItem('loggedIn', false);
 
   React.useEffect(() => {
     // Получение данных пользователя
     api.getProfileInfo()
       .then((res) => {
-        console.log(res) 
         if (res) {
-          //setLoggedIn(true);
           localStorage.setItem('loggedIn', true);
           setCurrentUser({
             name: res.name,
@@ -44,31 +40,36 @@ function App() {
           });
         } else {
           localStorage.removeItem('loggedIn');
+          localStorage.removeItem('allMovies');
+          localStorage.removeItem('regInfo');
+          localStorage.removeItem('checkbox');
           history.push('/');
         }
       })
       .catch((err) => {
         history.push('/');
         localStorage.removeItem('loggedIn');
+        localStorage.removeItem('allMovies');
+        localStorage.removeItem('regInfo');
+        localStorage.removeItem('checkbox');
       });
       
     // Получение списка сохраненных фильмов пользователя
     api.getSavedMovies()
-    .then((res) => {
-      if (res) {
-        setSavedMovies(res.movies);
-        // localStorage.setItem('savedMovies', JSON.stringify(res.movies));
-        setSavedMoviesShot(res.movies.filter(function (item) {
-          return (
-              item.duration <= SHOT_DURATIOM 
-          );
-      }));
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-    
+      .then((res) => {
+        if (res) {
+          setSavedMovies(res.movies);
+          setSavedMoviesShot(res.movies.filter(function (item) {
+            return (
+                item.duration <= SHOT_DURATIOM 
+            );
+        }));
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
   },[loginUser]);
 
   function handleChangeAuthStatus(data) {
@@ -81,10 +82,6 @@ function App() {
   function handleChangeLoginUser() {
     setLoginUser({});
   }
-
-  //function handleChangeLoggedIn(data) {
-  //  setLoggedIn(data);
-  //}
 
   function closeTooltipPopup() {
     setIsInfoTooltipOpen(false);
@@ -99,40 +96,38 @@ function App() {
       <section className="App">
         <Switch>
           <Route exact path="/">
-            <Main 
-              //loggedIn={loggedIn}
-            />
+            <Main/>
           </Route>
-          <Route path="/signin">
-            <Login 
-              history={history}
-              authStatus={authStatus}
-              handleChangeAuthStatus={handleChangeAuthStatus}
-              handleChangeLogginUser={handleChangeLoginUser}
-              //handleChangeLoggedIn={handleChangeLoggedIn}
-              setCurrentUser={setCurrentUser}
-              handleTooltipClick={handleTooltipClick}
-              isInfoTooltipOpen={isInfoTooltipOpen}
-              closeAllPopups={closeTooltipPopup}
-            />
-          </Route>
-          <Route path="/signup">
-            <Register
-              history={history}
-              authStatus={authStatus}
-              handleChangeAuthStatus={handleChangeAuthStatus}
-              handleChangeLogginUser={handleChangeLoginUser}
-              //handleChangeLoggedIn={handleChangeLoggedIn}
-              setCurrentUser={setCurrentUser}
-              handleTooltipClick={handleTooltipClick}
-              isInfoTooltipOpen={isInfoTooltipOpen}
-              closeAllPopups={closeTooltipPopup}
-            />
-          </Route>
+          <ProtectedRoute
+            path="/signin"
+            component={Login}
+            authWindow={true}
+            history={history}
+            authStatus={authStatus}
+            handleChangeAuthStatus={handleChangeAuthStatus}
+            handleChangeLogginUser={handleChangeLoginUser}
+            setCurrentUser={setCurrentUser}
+            handleTooltipClick={handleTooltipClick}
+            isInfoTooltipOpen={isInfoTooltipOpen}
+            closeAllPopups={closeTooltipPopup}
+          />
+          <ProtectedRoute
+            path="/signup"
+            component={Register}
+            authWindow={true}
+            history={history}
+            authStatus={authStatus}
+            handleChangeAuthStatus={handleChangeAuthStatus}
+            handleChangeLogginUser={handleChangeLoginUser}
+            setCurrentUser={setCurrentUser}
+            handleTooltipClick={handleTooltipClick}
+            isInfoTooltipOpen={isInfoTooltipOpen}
+            closeAllPopups={closeTooltipPopup}
+          />
           <ProtectedRoute
             path="/movies"
             component={Movies}
-            //loggedIn={loggedIn}
+            authWindow={false}
             history={history}
             savedMovies={savedMovies}
             handleSetSavedMovies={setSavedMovies}
@@ -140,7 +135,7 @@ function App() {
           <ProtectedRoute
             path="/saved-movies"
             component={SavedMovies}
-            //loggedIn={loggedIn}
+            authWindow={false}
             history={history}
             savedMovies={savedMovies}
             handleSetSavedMovies={setSavedMovies}
@@ -150,8 +145,6 @@ function App() {
           <ProtectedRoute
             path="/profile"
             component={Profile}
-            //loggedIn={loggedIn}
-            //handleChangeLoggedIn={handleChangeLoggedIn}
             authStatus={authStatus}
             handleChangeAuthStatus={handleChangeAuthStatus}
             setCurrentUser={setCurrentUser}

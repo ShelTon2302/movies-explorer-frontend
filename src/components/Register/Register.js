@@ -7,13 +7,13 @@ import { useFormWithValidation } from '../../utils/Validation';
 
 function Register(props) {
     const validForm = useFormWithValidation();
+    const [disableForm, setDisableForm] = React.useState(false)
 
     function handleRegSubmit(e) {
         e.preventDefault();
         api.register(validForm.values.auth_name, validForm.values.auth_email, validForm.values.auth_pass)
             .then ((res) => {
                 if (res) {
-                    //props.handleChangeLoggedIn(true);
                     localStorage.setItem('loggedIn', true)
                     props.handleChangeLogginUser();
                 } else {
@@ -46,6 +46,7 @@ function Register(props) {
                 emailErr={validForm.errors.auth_email}
                 passErr={validForm.errors.auth_pass}
                 isValid={validForm.isValid}
+                disableForm={disableForm}
                 onSubmit={handleRegSubmit}
             >
                 <p className="AuthForm__inputName">Имя</p>
@@ -57,7 +58,8 @@ function Register(props) {
                     minLength={2}
                     maxLength={30}
                     value={validForm.values.auth_name}
-                    onChange={validForm.handleChange} 
+                    onChange={validForm.handleChange}
+                    disabled={disableForm} 
                     required 
                 />
                 <span className="AuthForm__input-error">{validForm.errors.auth_name}</span>
@@ -67,7 +69,6 @@ function Register(props) {
                 isOpen={props.isInfoTooltipOpen}
                 onClose={props.closeAllPopups}
             />
-
         </section>
     )
 };
