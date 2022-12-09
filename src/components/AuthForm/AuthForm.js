@@ -3,10 +3,8 @@ import logo from '../../images/header_logo.svg';
 import { Link } from 'react-router-dom';
 
 function AuthForm(props) {
-    console.log(props.isValid);
-    console.log(!props.isValid && props.disableForm);
-
-    
+        console.log(props.passErr)
+     
     return (
         <section className="AuthForm">
             <Link  to="/"><img className="AuthForm__logo" src={logo} alt='logo' /></Link>
@@ -18,7 +16,7 @@ function AuthForm(props) {
                     <input 
                         type='email' 
                         placeholder='pochta@yandex.ru'
-                        className='AuthForm__input AuthForm__input_email'
+                        className={`AuthForm__input AuthForm__input_email${(props.emailErr === '' || !props.emailErr) ? '' : ' AuthForm__input_state_error'}`}
                         name='auth_email'
                         value={props.email}
                         onChange={props.handleChangeEmail}
@@ -30,7 +28,7 @@ function AuthForm(props) {
                     <input 
                         type='password'
                         placeholder='********' 
-                        className='AuthForm__input AuthForm__input_pass'
+                        className={`AuthForm__input AuthForm__input_pass${(props.passErr === '' || !props.passErr) ? '' : ' AuthForm__input_state_error'}`}
                         name='auth_pass'
                         value={props.pass}
                         onChange={props.handleChangePass} 

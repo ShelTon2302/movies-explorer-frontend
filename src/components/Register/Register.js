@@ -53,7 +53,7 @@ function Register(props) {
                 <input 
                     type='name' 
                     placeholder='Виталий'
-                    className='AuthForm__input AuthForm__input_email'
+                    className={`AuthForm__input AuthForm__input_email${(validForm.errors.auth_name === '' || !validForm.errors.auth_name) ? '' : ' AuthForm__input_state_error'}`}
                     name='auth_name'
                     minLength={2}
                     maxLength={30}

@@ -26,7 +26,6 @@ function MoviesCardList(props) {
             }
         }
     }, [props.widthWin]);
-
     
     React.useEffect(() => {
         if (props.movies.length > numberOfCard && !props.isSaved)
@@ -42,10 +41,8 @@ function MoviesCardList(props) {
 
     function pressMoreButton () {
         if ((numberOfCard * (numCycle + 1)) < props.movies.length) {
-            console.log(numCycle + 1);
-            setNumCycle(numCycle + 1);
-            console.log(numCycle);
             setPathOfMovies(props.movies.slice(0, numberOfCard * (numCycle + 1)));
+            setNumCycle(numCycle + 1);
         } else {
             setHiddenMoreButton(true);
 
