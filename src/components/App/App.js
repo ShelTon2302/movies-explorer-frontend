@@ -43,11 +43,11 @@ function App() {
           localStorage.removeItem('allMovies');
           localStorage.removeItem('regInfo');
           localStorage.removeItem('checkbox');
-          history.push('/');
+          //history.push('/');
         }
       })
       .catch((err) => {
-        history.push('/');
+        //history.push('/');
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('allMovies');
         localStorage.removeItem('regInfo');

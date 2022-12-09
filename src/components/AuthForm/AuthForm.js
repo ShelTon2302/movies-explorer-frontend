@@ -3,6 +3,9 @@ import logo from '../../images/header_logo.svg';
 import { Link } from 'react-router-dom';
 
 function AuthForm(props) {
+    console.log(props.isValid);
+    console.log(!props.isValid && props.disableForm);
+
     
     return (
         <section className="AuthForm">
@@ -41,7 +44,7 @@ function AuthForm(props) {
                     type="submit" 
                     className="AuthForm__submit" 
                     aria-label={props.buttonText}
-                    disabled={!props.isValid && props.disableForm}
+                    disabled={!props.isValid || props.disableForm}
                 >{props.buttonText}</button>
             </form>
             <div className="AuthForm__textArea">

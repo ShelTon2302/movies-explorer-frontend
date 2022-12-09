@@ -5,23 +5,26 @@ import { NUMBER_OF_ITEMS, NUMBER_OF_ITEMS_MOB, WIDTH_OF_MOB } from '../../const/
 
 function MoviesCardList(props) {
     const [hiddenMoreButton, setHiddenMoreButton] = React.useState(true);
-    const [endNum, setEndNum] = React.useState(NUMBER_OF_ITEMS);
+    const [numCycle, setNumCycle] = React.useState(1);
     const [pathOfMovies, setPathOfMovies] = React.useState([]);
     const [numberOfCard, setNumberOfCard] = React.useState(NUMBER_OF_ITEMS);
+
+    React.useEffect(() => {
+        props.setBegin({});
+    }, []);
 
     React.useEffect(() => {
         if (props.widthWin < WIDTH_OF_MOB) {
             if (numberOfCard !== NUMBER_OF_ITEMS_MOB) {
                 props.setBegin({});
+                setNumberOfCard(NUMBER_OF_ITEMS_MOB);
             }
-            setNumberOfCard(NUMBER_OF_ITEMS_MOB);
         } else {
             if (numberOfCard !== NUMBER_OF_ITEMS) {
                 props.setBegin({});
+                setNumberOfCard(NUMBER_OF_ITEMS);
             }
-            setNumberOfCard(NUMBER_OF_ITEMS);
         }
-
     }, [props.widthWin]);
 
     
@@ -29,24 +32,24 @@ function MoviesCardList(props) {
         if (props.movies.length > numberOfCard && !props.isSaved)
         {
             setHiddenMoreButton(false);
-            setEndNum(endNum + numberOfCard);
+            setNumCycle(1);
             setPathOfMovies(props.movies.slice(0, numberOfCard));
         } else {
             setHiddenMoreButton(true);
-            setEndNum(numberOfCard);
         }
     }, [props.begin, props.checkboxStatus]);
 
 
     function pressMoreButton () {
-        setEndNum(endNum + numberOfCard);
-        if (endNum < props.movies.length) {
-            setPathOfMovies(props.movies.slice(0, endNum));
+        if ((numberOfCard * (numCycle + 1)) < props.movies.length) {
+            console.log(numCycle + 1);
+            setNumCycle(numCycle + 1);
+            console.log(numCycle);
+            setPathOfMovies(props.movies.slice(0, numberOfCard * (numCycle + 1)));
         } else {
             setHiddenMoreButton(true);
-            setEndNum(NUMBER_OF_ITEMS);
-            setPathOfMovies([]);
-        }        
+
+        }
     }
     
     return (

@@ -17,6 +17,8 @@ function Login(props) {
             if (res) {
                 localStorage.setItem('loggedIn', true)
                 props.handleChangeLogginUser();
+                props.history.push('/movies');
+
             } else {
                 props.handleChangeAuthStatus({
                 msg: 'Что-то пошло не так! Попробуйте ещё раз.',
@@ -29,7 +31,6 @@ function Login(props) {
             .finally(() => {
                 setDisableForm(false);
                 validForm.resetForm();
-                props.history.push('/movies');
             });
     }
 
