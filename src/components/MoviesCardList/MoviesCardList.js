@@ -10,7 +10,9 @@ function MoviesCardList(props) {
     const [numberOfCard, setNumberOfCard] = React.useState(NUMBER_OF_ITEMS);
 
     React.useEffect(() => {
-        props.setBegin({});
+        if (!props.isSaved) {
+            props.setBegin({});
+        }
     }, []);
 
     React.useEffect(() => {
