@@ -1,6 +1,6 @@
 import './Navigation.css';
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/header_profilelogo.svg';
 
 function Navigation() {
@@ -13,7 +13,6 @@ function Navigation() {
                 <NavLink to="/profile" activeClassName="Navigation__menuLink_active" className="Navigation__menuLink">Аккаунт</NavLink>
                 <NavLink to="/profile" className="Navigation__menuLink"><img className="Navigation__profileLogo" src={logo} alt="logo"></img></NavLink>
             </nav>
-            {/*<Link className="Navigation__profileLink" to="/profile"><img className="Navigation__profileLogo" src={logo} alt="logo"></img></Link>*/}
         </div>
     );
 };

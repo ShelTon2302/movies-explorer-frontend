@@ -25,13 +25,21 @@
     color: #FFFFFF;
 }
 
-.NotFound__link {
-    margin: 0 calc(50% - 21px) 60px;
+.NotFound__button {
+    display: block;
+    margin: 0 auto 60px;
     width: 42px;
+    background: none;
+    border: none;
     font-size: 14px;
     line-height: 17px;
+    text-decoration: underline;
     text-align: center;
     color: #4285F4;
+}
+
+.NotFound__button:hover {
+    color: #88b1f1;
 }
 
 @media screen and (min-width: 520px) and (max-width: 900px){  
@@ -55,7 +63,7 @@
         margin: 10px auto 281px;
     }
 
-    .NotFound__link {
+    .NotFound__button {
         width: 36px;
         font-size: 12px;
         line-height: 15px;

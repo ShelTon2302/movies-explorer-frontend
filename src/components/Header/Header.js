@@ -19,10 +19,9 @@ function Header(props) {
     <header className={`Header${props.isAbout ? ' Header_backgroud_blue' : ''}`}>
       <div className="Header__content">
         <Link className="Header__link" to="/"><img className="Header__logo" src={logo} alt="logo"></img></Link>
-        {props.isAbout 
+        {(props.isAbout && !localStorage.getItem('loggedIn')) 
           ? 
             <div className="Header__about">
-              {/*<img className="Header__logo" src={logo} alt="logo"></img>*/}
               <Link className="Header__regLink" to="/signup">Регистрация</Link>
               <Link className="Header__logLink" to="/signin">Войти </Link>
             </div>
@@ -37,7 +36,7 @@ function Header(props) {
           </div>    
     </header>
   );
-  }
+}
   
   export default Header;
   

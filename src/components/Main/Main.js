@@ -8,11 +8,11 @@ import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 
 
-function Main() {
+function Main(props) {
     return (
         <>
             <Header
-                isAbout='true'   
+                isAbout='true'
             />
             <main className='Main'>
                 <Promo />
