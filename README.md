@@ -1,4 +1,5 @@
-# Проект Mesto фронтенд + бэкенд
+# Проект Movies explorer 
+# Frontend
 
 ## Директории
 
